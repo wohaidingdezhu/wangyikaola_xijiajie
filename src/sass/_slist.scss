@@ -1,0 +1,17 @@
+%list {
+    width: 164px;
+    text-align: center;
+    background-color: red;
+    font-size: $font14;
+    color: #fff;
+}
+
+.slist {
+    @extend %size;
+    height: 41px;
+    background-color: orange;
+    .slist1 {
+        @extend %list;
+        line-height: 41px;
+    }
+}

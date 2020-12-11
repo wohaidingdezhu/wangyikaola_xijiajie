@@ -1,0 +1,18 @@
+%size {
+    width: $box_width;
+    margin: 0 auto;
+}
+
+@mixin borderstyle ($w:1px, $s:solid, $c:red) {
+    border: $w $c $s;
+}
+
+.top {
+    width: $page_width;
+    .h_top {
+        @extend %size;
+        height: 30px;
+        @include borderstyle(1px, solid, red);
+        background-color: red;
+    }
+}

@@ -1,0 +1,67 @@
+.banner {
+    width: $page_width;
+    @include borderstyle(1px, solid, red);
+    background: url(https://kaola-haitao.oss.kaolacdn.com/7ec84216-89c5-4828-afcd-5157dade0308T2007241654_1920_506.jpg?x-oss-process=image/resize,w_1920/quality,q_90) no-repeat center;
+    .menu {
+        @extend %size;
+        @include borderstyle(1px, solid, red);
+        position: relative;
+        overflow: hidden;
+        .slist-li {
+            @extend %list;
+            line-height: 38.33px;
+            @include borderstyle(1px, solid, #ddd);
+            a {
+                display: block;
+                text-decoration: none;
+                color: #fff;
+                &:hover {
+                    //代表父元素
+                    text-decoration: underline;
+                }
+            }
+        }
+        .cartlist {
+            position: absolute;
+            left: 164px;
+            top: 0;
+            width: 926px;
+            min-height: 400px;
+            border: 1px solid #f7f7f7;
+            background-color: #fff;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
+            display: none;
+            transition: top 0.5s ease;
+        }
+    }
+    .b_l {
+        display: none;
+        width: 34px;
+        height: 68px;
+        background: url(https://kaola-haitao.oss.kaolacdn.com/fd1d7d20-1f64-4c35-a49a-a73f7d20b73e_979_797.png) no-repeat -625px -68px;
+        position: absolute;
+        top: 320px;
+        left: 390px;
+        text-decoration: none;
+        color: red;
+        @include borderstyle(1px, solid, red);
+    }
+    .b_r {
+        display: none;
+        width: 34px;
+        height: 68px;
+        background: url(https://kaola-haitao.oss.kaolacdn.com/fd1d7d20-1f64-4c35-a49a-a73f7d20b73e_979_797.png) no-repeat -670px -68px;
+        position: absolute;
+        top: 320px;
+        right: 250px;
+        text-decoration: none;
+        color: red;
+        @include borderstyle(1px, solid, red);
+    }
+    &:hover .b_l {
+        display: block;
+    }
+    &:hover .b_r {
+        display: block;
+    }
+}
