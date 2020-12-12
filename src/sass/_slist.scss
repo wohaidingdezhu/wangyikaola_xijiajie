@@ -9,9 +9,27 @@
 .slist {
     @extend %size;
     height: 41px;
-    background-color: orange;
     .slist1 {
         @extend %list;
         line-height: 41px;
+        float: left;
+        border-bottom: 1px dashed #fff;
+        background: linear-gradient(90deg, red, #ff3264);
+    }
+    .list_ul {
+        float: left;
+        padding-left: 25px;
+        li {
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            padding: 0 20px;
+            a {
+                text-decoration: none;
+                color: #333;
+                font-weight: bold;
+            }
+        }
     }
 }

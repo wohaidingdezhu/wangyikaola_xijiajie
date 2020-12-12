@@ -1,18 +1,20 @@
 .banner {
     width: $page_width;
-    @include borderstyle(1px, solid, red);
-    background: url(https://kaola-haitao.oss.kaolacdn.com/7ec84216-89c5-4828-afcd-5157dade0308T2007241654_1920_506.jpg?x-oss-process=image/resize,w_1920/quality,q_90) no-repeat center;
+    overflow: hidden;
     .menu {
         @extend %size;
-        @include borderstyle(1px, solid, red);
-        position: relative;
+        position: absolute;
+        z-index: 5;
+        left: 214px;
         overflow: hidden;
         .slist-li {
             @extend %list;
-            line-height: 38.33px;
-            @include borderstyle(1px, solid, #ddd);
+            height: 37.33px;
+            border-bottom: 1px dashed #ddd;
+            background: linear-gradient(90deg, red, #ff3264);
             a {
                 display: block;
+                line-height: 37.33px;
                 text-decoration: none;
                 color: #fff;
                 &:hover {
@@ -26,12 +28,27 @@
             left: 164px;
             top: 0;
             width: 926px;
-            min-height: 400px;
+            min-height: 460px;
             border: 1px solid #f7f7f7;
             background-color: #fff;
             box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
             display: none;
             transition: top 0.5s ease;
+        }
+    }
+    .content {
+        width: $box_width;
+        height: 460px;
+        margin: 0 auto;
+        position: relative;
+        .pic {
+            position: absolute;
+            left: 50%;
+            margin-left: -960px;
+            display: none;
+        }
+        .active {
+            display: block;
         }
     }
     .b_l {
@@ -44,7 +61,6 @@
         left: 390px;
         text-decoration: none;
         color: red;
-        @include borderstyle(1px, solid, red);
     }
     .b_r {
         display: none;
@@ -63,5 +79,41 @@
     }
     &:hover .b_r {
         display: block;
+    }
+    .m-sellpoint {
+        position: relative;
+        margin-top: -15px;
+        margin-bottom: 20px;
+        height: 45px;
+        background-color: rgba(0, 0, 0, .3);
+        .h-sellepoint {
+            margin: 0 auto;
+            width: $box_width;
+            .m_right {
+                float: right;
+                height: 45px;
+                color: #fff;
+                line-height: 45px;
+                a {
+                    font-size: 12px;
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+            .m-left {
+                float: left;
+                width: 468px;
+                line-height: 45px;
+                height: 45px;
+                color: #fff;
+                a {
+                    font-size: 12px;
+                    float: left;
+                    margin-right: 40px;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }

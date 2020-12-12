@@ -1,18 +1,89 @@
 %size {
+    //版心
     width: $box_width;
     margin: 0 auto;
 }
 
+//边框格式
 @mixin borderstyle ($w:1px, $s:solid, $c:red) {
     border: $w $c $s;
 }
 
 .top {
     width: $page_width;
+    background-color: #000;
     .h_top {
         @extend %size;
         height: 30px;
-        @include borderstyle(1px, solid, red);
-        background-color: red;
+        display: flex;
+        .top_left {
+            width: 40%;
+            display: flex;
+            .login,
+            .registry {
+                text-decoration: none;
+                line-height: 30px;
+                color: #999;
+                font-size: $font12;
+            }
+            .login {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .registry {
+                margin-right: 20px;
+            }
+            .s1,
+            .s2 {
+                display: block;
+                font-size: $font12;
+                line-height: 30px;
+                color: #999;
+            }
+        }
+        .top_right {
+            width: 60%;
+            .s3 {
+                display: block;
+                float: left;
+                line-height: 30px;
+                cursor: pointer;
+                margin-right: 30px;
+                font-size: $font12;
+                position: relative;
+                .s3_a {
+                    text-decoration: none;
+                    color: #999;
+                }
+                .drop {
+                    z-index: 5;
+                    position: absolute;
+                    width: 80px;
+                    line-height: 40px;
+                    background: #fff;
+                    top: 30px;
+                    display: none;
+                    .drop-1-li,
+                    .drop-2-li,
+                    .drop-3-li {
+                        height: 20px;
+                        line-height: 20px;
+                        @include borderstyle(1px, solid, #999);
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+        .active {
+            &:hover .s3_a,
+            .iconfont {
+                color: red;
+            }
+            &:hover .drop {
+                display: block;
+            }
+        }
     }
 }

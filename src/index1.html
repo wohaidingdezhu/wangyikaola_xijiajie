@@ -7,6 +7,7 @@
     <title>考拉海购</title>
     <meta name="keywords" content="跨境,海淘,进口,母婴用品,美妆个护,美食保健,美妆个护,海淘,商城" />
     <meta name="description" content="考拉海购-阿里巴巴旗下以跨境业务为主的会员电商，主打官方自营，全球直采的模式，为会员精选全球品质好货，保证极致性价比，全方位服务黑卡会员。" />
+    <link rel="stylesheet" href="./fonts/font_r8h1s0girkn/iconfont.css">
     <link rel="stylesheet" href="style/index.css">
     <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js" defer async=true data-main="script/main.js" id="currentpage" data-origin="index_module"></script>
 </head>
@@ -14,53 +15,153 @@
 <body>
     <!--头部-->
     <div class="top">
-        <div class="h_top">1111</div>
+        <div class="h_top">
+            <div class="top_left">
+                <span class="s1">考拉欢迎你！</span>
+                <a href="login.html" class="login">登录</a>
+                <a href="registry.html" class="registry">注册</a>
+                <span class="s2">手机考拉</span>
+            </div>
+            <div class="top_right">
+                <span class="s3"><a href="javascript:;" class="s3_a">每日签到</a> </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">我的订单</a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+                <div class="drop">
+                    <ul>
+                        <li class="drop-1-li">我的优惠卷</li>
+                        <li class="drop-1-li">我的购物津贴</li>
+                        <li class="drop-1-li">我的红包</li>
+                        <li class="drop-1-li">我的考拉</li>
+                    </ul>
+                </div>
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">
+                        个人中心
+                    </a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+                <div class="drop">
+                    <ul>
+                        <li class="drop-1-li">我的优惠卷</li>
+                        <li class="drop-1-li">我的购物津贴</li>
+                        <li class="drop-1-li">我的红包</li>
+                        <li class="drop-1-li">我的考拉</li>
+                    </ul>
+                </div>
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">客户服务</a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+                <div class="drop">
+                    <ul>
+                        <li class="drop-2-li">客户服务</li>
+                        <li class="drop-2-li">帮助中心</li>
+                        <li class="drop-2-li">只是产权保护</li>
+                        <li class="drop-2-li">规则中心</li>
+                    </ul>
+                </div>
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">充值中心</a>
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+                <div class="drop ">
+                    <ul>
+                        <li class="drop-3-li">话费充值</li>
+                        <li class="drop-3-li">游戏充值</li>
+                    </ul>
+                </div>
+                </span>
+                <span class="s3"><a href="javascript:;" class="s3_a">消费者权益</a> </span>
+                <span class="s3"><a href="javascript:;" class="s3_a">视频内容</a> </span>
+            </div>
+        </div>
     </div>
     <!--列表search-->
     <div class="search">
-        <div class="s_img"></div>
-        <div class="s_search"></div>
-        <div class="s_cart"></div>
+        <a href="https://www.kaola.com/" class="logo_kaola_new" title="考拉海购" data-param="zn=top" _pi="1"></a>
+        <div class="search_m">
+            <div id="topsearchbox">
+                <div id="topsearch">
+                    <div class="wrap">
+                        <input id="topSearchInput" type="text" placeholder="飞利浦电动牙刷">
+                        <span id="tosearchbtn"></span>
+                        <span class="iconfont icon-fangdajing"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="cart.html" id="j-newcart_btn" class="m-shopcartnew">
+            <span class="c_wrap"></span>
+            <span class="s_wrap">购物车</span>
+        </a>
     </div>
     <!--小列表slist-->
     <div class="slist">
-        <div class="slist1">所有分类</div>
-
-
+        <div class="slist1">
+            <span class="iconfont icon-goutongye_santiaogang_tiaozhuanxuanzehaizi" style="margin:0 20px 0px 4px"></span>所有分类
+        </div>
+        <ul class="list_ul">
+            <li><a href="" style="color: #ff1e32;">首页</a></li>
+            <li><a href="">海外直购</a></li>
+            <li><a href="">工厂店</a></li>
+            <li><a href="">品质奶粉</a></li>
+            <li><a href="">人气面膜</a></li>
+            <li><a href="">充值</a></li>
+        </ul>
     </div>
-    <!--banner广告-->
+    <!--banner广告轮播-->
     <div class="banner">
         <div class="menu">
             <ul>
                 <li class="slist-li">
-                    <a href="#">美容彩妆</a>
+                    <a href="#">
+                        <span class="iconfont icon-ziyuan" style="margin:0 20px 0px 4px"></span>美容彩妆</a>
                 </li>
                 <li class="slist-li">
-                    <a href="#">母婴儿童 </a>
+                    <a href="#">
+                        <span class="iconfont icon-aixin" style="margin:0 20px 0px 4px"></span>母婴儿童 </a>
                 </li>
                 <li class="slist-li">
-                    <a href="#">营养保健</a>
+                    <a href="#">
+                        <span class="iconfont icon-aixin" style="margin:0 20px 0px 4px"></span>营养保健</a>
                 </li>
                 <li class="slist-li">
-                    <a href="#">数码家电</a>
+                    <a href="#">
+                        <span class="iconfont icon-xiangji" style="margin:0 20px 0px 4px"></span>数码家电</a>
                 </li>
                 <li class="slist-li">
-                    <a href="#">个护家清</a>
+                    <a href="#">
+                        <span class="iconfont icon-goutongye_santiaogang_tiaozhuanxuanzehaizi" style="margin:0 20px 0px 4px"></span>个护家清</a>
                 </li>
                 <li class="slist-li">
-                    <a href="#">服饰鞋靴</a>
+                    <a href="#">
+                        <span class="iconfont icon-hudie" style="margin:0 20px 0px 4px"></span>运动户外</a>
                 </li>
                 <li class="slist-li">
-                    <a href="#">服饰鞋靴</a>
+                    <a href="#">
+                        <span class="iconfont icon-zhinanzhen" style="margin:0 20px 0px 4px"></span>手表配饰</a>
                 </li>
                 <li class="slist-li">
-                    <a href="#">服饰鞋靴</a>
+                    <a href="#">
+                        <span class="iconfont icon-hanbao" style="margin:0 20px 0px 4px"></span>服饰鞋靴</a>
                 </li>
                 <li class="slist-li">
-                    <a href="#">服饰鞋靴</a>
+                    <a href="#">
+                        <span class="iconfont icon-shafa" style="margin:0 20px 0px 4px"></span>家居生活</a>
+                </li>
                 </li>
                 <li class="slist-li">
-                    <a href="#">服饰鞋靴</a>
+                    <a href="#">
+                        <span class="iconfont icon-shafa" style="margin:0 20px 0px 4px"></span>家居生活</a>
+                </li>
+                <li class="slist-li">
+                    <a href="#">
+                        <span class="iconfont icon-goutongye_santiaogang_tiaozhuanxuanzehaizi" style="margin:0 20px 0px 4px"></span>环球美食</a>
+                </li>
+                <li class="slist-li">
+                    <a href="#">
+                        <span class="iconfont icon-mao" style="margin:0 20px 0px 4px"></span>宠物生活</a>
                 </li>
             </ul>
             <div class="cartlist">
@@ -84,32 +185,46 @@
                 <div class="item">第四43254354325432543254325块内容</div>
             </div>
         </div>
+        <div class="content">
+            <ul>
+                <li><img src="https://kaola-haitao.oss.kaolacdn.com/c620bed2-5c42-4c3b-81d6-0bbd06872ee4T2012111356_1920_506.jpg?x-oss-process=image/resize,w_1920/quality,q_90" class="pic active" /></li>
+                <li><img src="https://https://kaola-haitao.oss.kaolacdn.com/7ec84216-89c5-4828-afcd-5157dade0308T2007241654_1920_506.jpg?x-oss-process=image/resize,w_1920/quality,q_90" class="pic" /></li>
+                <li><img src="https://kaola-haitao.oss.kaolacdn.com/87e5a506-7c9b-455a-8895-226af97ab264T2009301808_1920_506.jpg?x-oss-process=image/resize,w_1920/quality,q_90" class="pic" /></li>
+            </ul>
+        </div>
+        <!--轮播图箭头-->
         <a href="javascript:;" id="left" class="b_l"></a>
         <a href="javascript:;" id="right" class="b_r"></a>
+        <!--新人-->>
+        <article class="m-sellpoint">
+            <section class="h-sellepoint">
+                <div class="m-left">
+                    <a class="itm">
+                        <span class="iconfont icon-ziqian" style="font-size: 16px;margin: 0px 7px 0px 0px"></span>
+                        <span class="txt">考拉自营</span>
+                    </a>
+                    <a class="itm">
+                        <span class="iconfont icon-hudie" style="font-size: 16px;margin: 0px 7px 0px 0px"></span>
+                        <span class="txt">全球直采</span>
+                    </a>
+                    <a class="itm">
+                        <span class="iconfont icon-zhengque" style="font-size: 16px;margin: 0px 7px 0px 0px"></span>
+                        <span class="txt">假一罚十</span>
+                    </a>
+                    <a class="itm">
+                        <span class="iconfont icon-renminbi" style="font-size: 16px;margin: 0px 7px 0px 0px"></span>
+                        <span class="txt">售后无忧</span>
+                    </a>
+                </div>
+                <div class="m_right">
+                    <a href="//app.kaola.com/" target="_blank">新人下载APP，领10元满减红包</a>
+                </div>
+            </section>
+        </article>
     </div>
-    <!--新人下载-->
-    <!-- <div class="info"></div> -->
-    <!--主内容-->
-    <!-- <section class="s_left"></section>
-    <section class="s_right"></section>
-    <section class="s_1">
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </section>
-    <section class="s_2">运动户外</section>
-    <section class="s_2_p"></section>
-    <section class="s_3">热卖品牌</section>
-    <section class="s_3_p"></section>
-    <section class="s_4">美妆专区</section>
-    <section class="s_4_p"></section> -->
-
-
-
+    <!--广告图-->
+    <div class="imgwrap"></div>
+    <!--主内容区-->
 </body>
 
 </html>
