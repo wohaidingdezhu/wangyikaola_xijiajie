@@ -1,69 +1,100 @@
-define([], () => {
+// define(['jcookie'], () => {
+//     return {
+//         init: function() {
+//             let $sid = location.search.substring(1).split('=')[1]; //得到side 4
+//             if (!$sid) { //没有值 输出乱七八糟的东西 不存在为假
+//                 $sid = 1;
+//             }
+//             //2.将sid传给后端，后端根据对应的sid返回不同的数据。
+//             $.ajax({
+//                 url: 'http://localhost/dashboard/JS2010/week06/Day%2029-Day%2031_jquery/projectname/php/detail.php',
+//                 data: {
+//                     sid: $sid
+//                 },
+//                 dataType: 'json'
+//             }).done(function(data) { //后端php页面根据sid找到数据库对应那条数据
+//                 console.log(data);
+//                 console.log(data.urls);
+//                 //获取数据，将数据放入对应的结构中。
+//                 $('#smallpic').attr('src', data.url);
+//                 $('.loadtitle').html(data.title);
+//                 $('.loadpcp').html(data.price);
+
+//                 //渲染放大镜下面的小图
+//                 let $picurl = data.urls.split(','); //将数据转换成数组。
+//                 let $strhtml = '';
+//                 const $list = $('#list');
+//                 console.log($picurl);
+//                 $.each($picurl, function(index, value) {
+//                     $strhtml += `
+//                         <li>
+//                             <img src="${value}"/>
+//                         </li>
+//                     `;
+//                 });
+//                 $list.html($strhtml);
+//             });
+//             //五.购物车：(商品sid、商品数量)
+//             //1.设置存储cookie的变量。
+//             let arrsid = []; //存储商品的sid
+//             let arrnum = []; //存储商品的数量
+//             //2.判断是第一次存储，多次存储。
+//             //获取cookie才能判断，每存储一个商品对应的cookie就会发生变化。
+//             //提前预判cookie设置时的key值(cookiesid/cookienum)
+//             function getcookietoarray() {
+//                 if ($.cookie('cookiesid') && $.cookie('cookienum')) {
+//                     arrsid = $.cookie('cookiesid').split(',');
+//                     arrnum = $.cookie('cookienum').split(',');
+//                 }
+//             }
+//             //上面的函数获取cookie值，并且转换成数组，方便判断是否是第一次。
+//             //第一次存储添加sid进入arrsid，存储数量
+//             //第二次以上，直接修改数量。
+//             $('.p-btn a').on('click', function() {
+//                 getcookietoarray(); //获取cookie，变成数组，判断是否存在。
+//                 if ($.inArray($sid, arrsid) === -1) { //不存在
+//                     arrsid.push($sid);
+//                     $.cookie('cookiesid', arrsid, 10);
+//                     arrnum.push($('#count').val());
+//                     $.cookie('cookienum', arrnum, 10);
+//                 } else { //存着
+//                     //通过$sid获取商品的数量所在的位置。
+//                     let $index = $.inArray($sid, arrsid);
+//                     // arrnum[$index]//原来的数组
+//                     // $('#count').val()//新添加的数量
+//                     arrnum[$index] = parseInt(arrnum[$index]) + parseInt($('#count').val()); //重新赋值
+//                     $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
+//                 }
+//                 alert('按钮被点击了');
+//             });
+//         }
+//     }
+// });
+define(['jlazyload'], () => { //懒加载依赖与这个
     return {
         init: function() {
-            //代码实现
-            //1.鼠标移入左侧的li元素，显示右侧的大盒子。
-            const $list = $('.menu li');
-            const $cartlist = $('.cartlist');
-            const $items = $('.item');
-            $list.hover(function() {
-                $cartlist.show();
-                $(this).addClass('active').siblings('li').removeClass('active');
-                //切换内容发生改变，不同的li对应不同的内容块。
-                $items.eq($(this).index()).show().siblings('.item').hide();
-                //改变右侧的大盒子的位置
-                let $scrolltop = $(window).scrollTop();
-                let $bannertop = $('.banner').offset().top;
-                if ($scrolltop > $bannertop) {
-                    $cartlist.css({
-                        top: $scrolltop - $bannertop
+            const $list = $('.list123');
+            $.ajax({
+                url: 'http://localhost/dashboard/kaola/php/index.php',
+                dataType: 'json'
+            }).done(function(data) { //一个页面对应所有的数据接口
+                let $strhtml = '';
+                $.each(data, function(index, value) {
+                    $strhtml += `
+                    <li class="s1-li">
+                        <h3 class="tit1">${value.title}</h3>
+                            <p class="s1-into">${value.intro}</p>
+                            <img class="img-lazyload u-loaded" src="${value.url}">
+                    </li>
+                    `;
+                });
+                $list.html($strhtml);
+                $(function() { //页面加载完成
+                    $("img.lazy").lazyload({
+                        effect: "fadeIn" //显示方法：淡入
                     });
-                } else {
-                    $cartlist.css({
-                        top: 0
-                    });
-                }
-            }, function() {
-                $cartlist.hide();
-            });
-            //2.鼠标移入右侧的大盒子，大盒子依然显示隐藏
-            $cartlist.hover(function() {
-                $(this).show();
-            }, function() {
-                $(this).hide();
-            });
-            //3.商城顶部悬浮
-            const $box = $('.nav');
-            let timer = null;
-            $(window).on('scroll', () => {
-                // console.log(this);
-                clearInterval(timer);
-                let $scrolltop = $(window).scrollTop(); //获取滚动条top值
-                timer = setInterval(function() {
-                    if ($scrolltop >= 260) {
-                        $box.stop(true).animate({
-                            top: 0 //改变box的top值参数 就是定位的那个参数
-                        })
-                    } else {
-                        $box.stop(true).animate({
-                            top: -60
-                        })
-                    }
-                }, 300);
-
-            });
-            //检测是否用户已经登录
-            if (localStorage.getItem('loginname')) {
-                $('.admin').show();
-                $('.login').hide();
-                $('.admin span').html(localStorage.getItem('loginname'));
-            }
-            //退出登录 - 删除本地存储
-            $('.admin a').on('click', function() {
-                $('.admin').hide();
-                $('.login').show();
-                localStorage.removeItem('loginname');
+                });
             });
         }
     }
-});
+})

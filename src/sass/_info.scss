@@ -1,9 +1,0 @@
-.info {
-    width: $page_width;
-    .info_h {
-        @extend %size;
-        height: 45px;
-        @include borderstyle(1px, solid, red);
-        background-color: yellow;
-    }
-}

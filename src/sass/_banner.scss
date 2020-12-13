@@ -1,12 +1,15 @@
 .banner {
     width: $page_width;
     overflow: hidden;
-    .menu {
+    .wrap {
         @extend %size;
+        position: relative;
+    }
+    .menu {
+        //二级菜单
         position: absolute;
         z-index: 5;
-        left: 214px;
-        overflow: hidden;
+        // overflow: hidden;
         .slist-li {
             @extend %list;
             height: 37.33px;
@@ -17,13 +20,11 @@
                 line-height: 37.33px;
                 text-decoration: none;
                 color: #fff;
-                &:hover {
-                    //代表父元素
-                    text-decoration: underline;
-                }
             }
         }
         .cartlist {
+            background: red;
+            z-index: 50;
             position: absolute;
             left: 164px;
             top: 0;
@@ -34,6 +35,23 @@
             box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
             display: none;
             transition: top 0.5s ease;
+            .item {
+                // background: red;
+                display: inline-block;
+                width: 250px;
+                height: 250px;
+                line-height: normal;
+                a {
+                    margin-right: 20px;
+                }
+                p {
+                    color: #333;
+                    font-size: 15px;
+                }
+            }
+        }
+        &:hover .cartlist {
+            display: block;
         }
     }
     .content {
@@ -50,29 +68,43 @@
         .active {
             display: block;
         }
+        ol {
+            position: absolute;
+            bottom: 30px;
+            left: 200px;
+        }
+        .ol-active {
+            float: left;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #fff;
+            text-indent: -999em;
+            margin-right: 10px;
+        }
+        .stay {
+            background: red;
+        }
     }
     .b_l {
+        position: absolute;
+        left: 169px;
+        top: 250px;
         display: none;
         width: 34px;
         height: 68px;
-        background: url(https://kaola-haitao.oss.kaolacdn.com/fd1d7d20-1f64-4c35-a49a-a73f7d20b73e_979_797.png) no-repeat -625px -68px;
-        position: absolute;
-        top: 320px;
-        left: 390px;
-        text-decoration: none;
-        color: red;
+        background-color: yellow;
+        background: url(https://kaola-haitao.oss.kaolacdn.com/fd1d7d20-1f64-4c35-a49a-a73f7d20b73e_979_797.png)no-repeat -625px -68px;
     }
     .b_r {
+        position: absolute;
+        right: 0px;
+        top: 250px;
         display: none;
         width: 34px;
         height: 68px;
-        background: url(https://kaola-haitao.oss.kaolacdn.com/fd1d7d20-1f64-4c35-a49a-a73f7d20b73e_979_797.png) no-repeat -670px -68px;
-        position: absolute;
-        top: 320px;
-        right: 250px;
-        text-decoration: none;
-        color: red;
-        @include borderstyle(1px, solid, red);
+        background-color: yellow;
+        background: url(https://kaola-haitao.oss.kaolacdn.com/fd1d7d20-1f64-4c35-a49a-a73f7d20b73e_979_797.png)no-repeat -670px -67px;
     }
     &:hover .b_l {
         display: block;
@@ -82,7 +114,7 @@
     }
     .m-sellpoint {
         position: relative;
-        margin-top: -15px;
+        margin-top: 0px;
         margin-bottom: 20px;
         height: 45px;
         background-color: rgba(0, 0, 0, .3);

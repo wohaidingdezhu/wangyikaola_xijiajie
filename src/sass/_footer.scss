@@ -1,0 +1,17 @@
+footer {
+    width: $page_width;
+    background-color: #333;
+    .f-h {
+        @extend %size;
+        height: 153px;
+        position: relative;
+        padding: 20px 0;
+        background: #333;
+        line-height: 26px;
+        text-align: center;
+        color: #c2c2c2;
+        .m-license {
+            margin-left: 20px;
+        }
+    }
+}

@@ -1,7 +1,52 @@
-.imgwrap {
-    // width: 1519px;
-    height: 308px;
-    // margin-left: -759.5px;
-    // background-size: 1920px 308px;
-    background: url(https://kaola-haitao.oss.kaolacdn.com/c61124bf-c418-49b3-b588-b1e3be5dfa9dT2012041641_1920_308.png?x-oss-process=image/resize,w_2400,h_385/quality,q_95) no-repeat center;
+.wrap3 {
+    width: $page_width;
+    .wrap-h {
+        //版心
+        @extend %size;
+        background-color: #ddd;
+        // overflow: hidden;
+        position: relative;
+    }
+    .imgwrap {
+        width: 1090px;
+        height: 308px;
+        position: relative;
+        img {
+            //1920图片的水平居中
+            position: absolute;
+            left: 50%;
+            margin-left: -960px;
+        }
+    }
+    .loutinav {
+        //商城楼梯
+        position: absolute;
+        left: -110px;
+        top: 0;
+        z-index: 10;
+        background-color: #fff;
+        li {
+            height: 32px;
+            line-height: 32px;
+            padding-left: 9px;
+            color: #999;
+            cursor: pointer;
+            span {
+                margin-top: 10px;
+                display: block;
+                width: 97px;
+                height: 32px;
+                font-size: 18px;
+            }
+            &:hover {
+                color: red;
+            }
+            img {
+                display: block;
+                height: 80px;
+                width: 100px;
+                margin-top: 5px;
+            }
+        }
+    }
 }

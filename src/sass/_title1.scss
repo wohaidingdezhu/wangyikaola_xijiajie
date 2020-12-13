@@ -1,0 +1,34 @@
+.title1 {
+    background: #eee;
+    .title1-h {
+        @extend %size;
+        background: #eee;
+        height: 74px;
+        padding-top: 25px;
+        .tit1 {
+            float: left;
+            margin-right: 20px;
+            font-weight: 400px;
+            font-size: 26px;
+            .big1 {
+                font-weight: bolder;
+            }
+        }
+        ul {
+            position: relative;
+            top: 10px;
+            font-size: 14px;
+            color: #999;
+            li {
+                float: left;
+                margin-right: 14px;
+            }
+        }
+        span {
+            display: block;
+            float: right;
+            color: #999;
+            margin-top: 10px;
+        }
+    }
+}

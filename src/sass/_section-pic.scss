@@ -1,0 +1,27 @@
+.section-pic {
+    background-color: #eee;
+    border-top: 4px solid #eee;
+    box-sizing: border-box;
+    .sectionpic-h {
+        @extend %size;
+        height: 218px;
+        background-color: #fff;
+        .txt4 {
+            font-size: 16px;
+            color: #000;
+            font-weight: 700;
+            line-height: 48px;
+            height: 48px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        li {
+            float: left;
+            text-align: center;
+            width: 215px;
+            height: 167px;
+            img {
+                margin-top: 25px;
+            }
+        }
+    }
+}

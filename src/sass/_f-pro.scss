@@ -1,0 +1,42 @@
+.f-pro {
+    background-color: #fff;
+    margin-top: 80px;
+    .footbox {
+        //版心
+        @extend %size;
+        height: 49px;
+        border-bottom: 3px solid #ddd;
+        padding: 49px 0;
+        li {
+            float: left;
+            width: 220px;
+            margin-left: 40px;
+            .btmIcon {
+                //正字圆形
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                border: 2px solid #d6d6d6;
+                text-align: center;
+                line-height: 44px;
+                font-size: 20px;
+                font-weight: 700;
+                float: left;
+                margin-right: 12px;
+            }
+            .tit {
+                //正品承诺
+                font-size: 18px;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 5px;
+            }
+            .desc {
+                //正品保障假一赔十
+                font-size: 14px;
+                display: block;
+                color: #333;
+            }
+        }
+    }
+}

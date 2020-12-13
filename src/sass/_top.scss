@@ -17,6 +17,7 @@
         height: 30px;
         display: flex;
         .top_left {
+            //登录注册
             width: 40%;
             display: flex;
             .login,
@@ -56,6 +57,7 @@
                     color: #999;
                 }
                 .drop {
+                    //下拉菜单
                     z-index: 5;
                     position: absolute;
                     width: 80px;

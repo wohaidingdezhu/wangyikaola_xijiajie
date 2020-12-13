@@ -1,5 +1,6 @@
 .search {
     @extend %size;
+    background: #fff;
     height: 100px;
     position: relative;
     .logo_kaola_new {
@@ -78,8 +79,6 @@
         line-height: 36px;
         font-size: 14px;
         text-align: center;
-        -moz-border-radius: 36px;
-        -webkit-border-radius: 36px;
         border-radius: 36px;
         border: 2px solid #ff1e32;
         text-decoration: none;
