@@ -1,52 +1,56 @@
-.wrap3 {
-    width: $page_width;
-    .wrap-h {
-        //版心
-        @extend %size;
-        background-color: #ddd;
-        // overflow: hidden;
-        position: relative;
-    }
-    .imgwrap {
-        width: 1090px;
-        height: 308px;
-        position: relative;
-        img {
-            //1920图片的水平居中
-            position: absolute;
-            left: 50%;
-            margin-left: -960px;
+    .wrap3 {
+        width: $page_width;
+        .wrap-h {
+            //版心
+            @extend %size;
+            background-color: #ddd;
+            // overflow: hidden;
+            position: relative;
+            .imgwrap {
+                width: 1090px;
+                height: 308px;
+                position: relative;
+                img {
+                    //1920图片的水平居中
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -960px;
+                }
+            }
+            .rain {
+                position: fixed;
+                top: 35px;
+            }
+            .loutinav {
+                //商城楼梯
+                position: absolute;
+                left: -120px;
+                top: 0px;
+                z-index: 550;
+                background-color: red;
+                li {
+                    height: 32px;
+                    line-height: 32px;
+                    padding-left: 9px;
+                    color: #999;
+                    cursor: pointer;
+                    span {
+                        margin-top: 10px;
+                        display: block;
+                        width: 97px;
+                        height: 32px;
+                        font-size: 18px;
+                    }
+                    &:hover {
+                        color: red;
+                    }
+                    img {
+                        display: block;
+                        height: 80px;
+                        width: 100px;
+                        margin-top: 5px;
+                    }
+                }
+            }
         }
     }
-    .loutinav {
-        //商城楼梯
-        position: absolute;
-        left: -110px;
-        top: 0;
-        z-index: 10;
-        background-color: #fff;
-        li {
-            height: 32px;
-            line-height: 32px;
-            padding-left: 9px;
-            color: #999;
-            cursor: pointer;
-            span {
-                margin-top: 10px;
-                display: block;
-                width: 97px;
-                height: 32px;
-                font-size: 18px;
-            }
-            &:hover {
-                color: red;
-            }
-            img {
-                display: block;
-                height: 80px;
-                width: 100px;
-                margin-top: 5px;
-            }
-        }
-    }
-}

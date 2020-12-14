@@ -1,0 +1,40 @@
+.f-pro {
+  background-color: #fff;
+}
+.f-pro .footbox {
+  width: 1090px;
+  margin: 0 auto;
+  height: 40px;
+  border-bottom: 3px solid #ddd;
+  padding: 10px 0;
+}
+.f-pro .footbox li {
+  float: left;
+  width: 220px;
+  margin-left: 40px;
+}
+.f-pro .footbox li .btmIcon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #d6d6d6;
+  text-align: center;
+  line-height: 44px;
+  font-size: 20px;
+  font-weight: 700;
+  float: left;
+  margin-right: 12px;
+}
+.f-pro .footbox li .tit {
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+}
+.f-pro .footbox li .desc {
+  font-size: 14px;
+  display: block;
+  color: #333;
+}
+
+/*# sourceMappingURL=loginfpro.css.map */

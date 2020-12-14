@@ -1,0 +1,81 @@
+.top {
+  width: 100%;
+  background-color: #000;
+}
+.top .h_top {
+  width: 1090px;
+  margin: 0 auto;
+  height: 50px;
+  display: flex;
+}
+.top .h_top .top_left {
+  width: 40%;
+  display: flex;
+}
+.top .h_top .top_left .login,
+.top .h_top .top_left .registry {
+  text-decoration: none;
+  line-height: 30px;
+  color: #999;
+  font-size: 12px;
+}
+.top .h_top .top_left .login {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.top .h_top .top_left .registry {
+  margin-right: 20px;
+}
+.top .h_top .top_left .s1,
+.top .h_top .top_left .s2 {
+  display: block;
+  font-size: 12px;
+  line-height: 30px;
+  color: #999;
+}
+.top .h_top .top_right {
+  width: 60%;
+}
+.top .h_top .top_right .s3 {
+  display: block;
+  float: left;
+  line-height: 30px;
+  cursor: pointer;
+  margin-right: 30px;
+  font-size: 12px;
+  position: relative;
+}
+.top .h_top .top_right .s3 .s3_a {
+  text-decoration: none;
+  color: #999;
+}
+.top .h_top .top_right .s3 .drop {
+  z-index: 5;
+  position: absolute;
+  width: 80px;
+  line-height: 40px;
+  background: #fff;
+  top: 30px;
+  display: block;
+}
+.top .h_top .top_right .s3 .drop .drop-1-li,
+.top .h_top .top_right .s3 .drop .drop-2-li,
+.top .h_top .top_right .s3 .drop .drop-3-li {
+  height: 20px;
+  line-height: 20px;
+  border: 1px solid #999;
+}
+.top .h_top .top_right .s3 .drop .drop-1-li:hover,
+.top .h_top .top_right .s3 .drop .drop-2-li:hover,
+.top .h_top .top_right .s3 .drop .drop-3-li:hover {
+  color: red;
+}
+.top .h_top .active:hover .s3_a,
+.top .h_top .active .iconfont {
+  color: red;
+}
+.top .h_top .active:hover .drop {
+  display: block;
+}
+
+/*# sourceMappingURL=logintop.css.map */

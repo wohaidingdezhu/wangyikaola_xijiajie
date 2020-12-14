@@ -4,18 +4,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>登录页面</title>
+    <link rel="stylesheet" href="style/logintop.css">
+    <link rel="stylesheet" href="style/loginfpro.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+        
+        .fp {
+            width: 450px;
+            height: 50px;
+        }
+        
+        .np {
+            margin-top: 15px;
+        }
+        
+        #login {
+            width: 70px;
+            height: 40px;
+            margin-right: 30px;
+        }
+        
+        .np a {
+            text-decoration: none;
+        }
+        
+        .pic {
+            float: left;
+            width: 500px;
+            height: 300px;
+        }
+    </style>
 </head>
 
+
 <body>
-    <fieldset style="width:500px;margin:0 auto;">
+    <div class="top">
+        <div class="h_top">
+            <div class="top_left">
+                <span class="s1">考拉欢迎你！</span>
+                <a href="login.html" class="login">登录</a>
+                <a href="registry.html" class="registry">注册</a>
+                <span class="s2">手机考拉</span>
+            </div>
+            <div class="top_right">
+                <span class="s3"><a href="javascript:;" class="s3_a">每日签到</a> </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">我的订单</a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">
+                        个人中心
+                    </a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">客户服务</a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">充值中心</a>
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+                </span>
+                <span class="s3"><a href="javascript:;" class="s3_a">消费者权益</a> </span>
+                <span class="s3"><a href="javascript:;" class="s3_a">视频内容</a> </span>
+            </div>
+        </div>
+    </div>
+    <div class="pic">
+        <img src="/src/images/denglu.png" alt="">
+    </div>
+    <fieldset style="width:500px;height:300px; margin:100px 0 0 800px;">
         <legend>用户登录</legend>
         <form action="" method="post">
-            <p><label for="">用户名：</label><input type="text" name="username" id="username"></p>
+            <p class="fp"><label for="">用户名：</label><input type="text" name="username" id="username"></p>
             <p><label for="">密　码：</label><input type="password" name="password" id="password"></p>
-            <p><input type="button" value="登录" id="login"><a href="registry.html">立即注册</a></p>
+            <p class="np">
+                <input type="button" value="登录" id="login">
+                <a href="registry.html">立即注册</a>
+            </p>
         </form>
     </fieldset>
+    <!--正品承诺-->
+    <div class="f-pro">
+        <div class="footbox">
+            <ul class="clearfix">
+                <li>
+                    <div class="btmIcon">正</div>
+                    <strong class="tit">正品承诺</strong>
+                    <span class="desc">正品保障 假一赔十
+                    </span>
+                </li>
+                <li>
+                    <div class="btmIcon">低</div><strong class="tit">低价保障</strong> <span class="desc">缩减中间环节 确保低价</span></li>
+                <li>
+                    <div class="btmIcon">退</div><strong class="tit">30天无忧退货</strong> <span class="desc">国内退货 售后无忧</span>
+                </li>
+                <li class="last">
+                    <div class="btmIcon">邮</div><strong class="tit">满88包邮</strong> <span class="desc">部分特殊商品除外</span>
+                </li>
+            </ul>
+        </div>
+    </div>
 </body>
 
 </html>

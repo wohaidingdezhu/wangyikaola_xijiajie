@@ -1,0 +1,81 @@
+.top {
+    width: 100%;
+    background-color: #000;
+    .h_top {
+        width: 1090px;
+        margin: 0 auto;
+        height: 50px;
+        display: flex;
+        .top_left {
+            //登录注册
+            width: 40%;
+            display: flex;
+            .login,
+            .registry {
+                text-decoration: none;
+                line-height: 30px;
+                color: #999;
+                font-size: 12px;
+            }
+            .login {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+            .registry {
+                margin-right: 20px;
+            }
+            .s1,
+            .s2 {
+                display: block;
+                font-size: 12px;
+                line-height: 30px;
+                color: #999;
+            }
+        }
+        .top_right {
+            width: 60%;
+            .s3 {
+                display: block;
+                float: left;
+                line-height: 30px;
+                cursor: pointer;
+                margin-right: 30px;
+                font-size: 12px;
+                position: relative;
+                .s3_a {
+                    text-decoration: none;
+                    color: #999;
+                }
+                .drop {
+                    //下拉菜单
+                    z-index: 5;
+                    position: absolute;
+                    width: 80px;
+                    line-height: 40px;
+                    background: #fff;
+                    top: 30px;
+                    display: block;
+                    .drop-1-li,
+                    .drop-2-li,
+                    .drop-3-li {
+                        height: 20px;
+                        line-height: 20px;
+                        border: 1px solid #999;
+                        &:hover {
+                            color: red;
+                        }
+                    }
+                }
+            }
+        }
+        .active {
+            &:hover .s3_a,
+            .iconfont {
+                color: red;
+            }
+            &:hover .drop {
+                display: block;
+            }
+        }
+    }
+}

@@ -21,6 +21,16 @@
                 text-decoration: none;
                 color: #fff;
             }
+            &:hover .cartlist {
+                display: block;
+            }
+        }
+        .selected {
+            font-weight: bold;
+            background: #fff;
+            a {
+                color: red;
+            }
         }
         .cartlist {
             background: red;
@@ -31,27 +41,31 @@
             width: 926px;
             min-height: 460px;
             border: 1px solid #f7f7f7;
-            background-color: #fff;
+            background: #c1c1c1;
             box-shadow: 2px 0 5px rgba(0, 0, 0, .3);
             display: none;
             transition: top 0.5s ease;
             .item {
-                // background: red;
+                background: #fff;
                 display: inline-block;
-                width: 250px;
-                height: 250px;
-                line-height: normal;
+                width: 500px;
+                height: 455px;
                 a {
                     margin-right: 20px;
+                    text-decoration: none;
+                    color: red;
                 }
                 p {
+                    font-weight: bold;
+                    font-size: 22px;
+                    border-bottom: 1px solid #ddd;
+                    height: 40px;
+                    text-align: center;
+                    line-height: 40px;
                     color: #333;
                     font-size: 15px;
                 }
             }
-        }
-        &:hover .cartlist {
-            display: block;
         }
     }
     .content {
@@ -63,10 +77,6 @@
             position: absolute;
             left: 50%;
             margin-left: -960px;
-            display: none;
-        }
-        .active {
-            display: block;
         }
         ol {
             position: absolute;
@@ -78,7 +88,7 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            background: #fff;
+            background: #999;
             text-indent: -999em;
             margin-right: 10px;
         }

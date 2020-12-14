@@ -309,6 +309,111 @@ table {
   background: url(https://kaola-haitao.oss.kaolacdn.com/14f1eb69-f7c0-4d4f-95d8-4aee8e2e1f1b.png?x-oss-process=image%2Fresize%2Cw_20%2Ch_0%2Fquality%2Cq_90) no-repeat 0 0;
 }
 
+.wrap7 {
+  width: 100%;
+  position: relative;
+}
+.wrap7 .searchflex {
+  width: 1090px;
+  margin: 0 auto;
+  background: skyblue;
+  height: 50px;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -545px;
+  display: none;
+}
+.wrap7 .searchflex .logo_kaola_new {
+  z-index: 15;
+  background: url(http://kaola-haitao.oss.kaolacdn.com/271c7d10-5167-443a-afe5-9f0729964b5e.png?v=1&x-oss-process=image) no-repeat;
+  display: block;
+  width: 330px;
+  height: 40px;
+  background-size: auto 65px;
+  float: left;
+  margin: 5px 5px 0 0;
+}
+.wrap7 .searchflex .search_m {
+  margin-top: 5px;
+  float: left;
+}
+.wrap7 .searchflex #topsearch {
+  width: 510px;
+  height: 38px;
+  padding-left: 1px;
+  background-color: #ff2337;
+  border-radius: 40px;
+}
+.wrap7 .searchflex #topsearch .wrap {
+  width: 380px;
+  margin: 1px 0px;
+  padding: 6px 39px 6px 30px;
+  background-color: #fff;
+  border-radius: 24px 0 0 24px;
+}
+.wrap7 .searchflex #topsearch .wrap .icon-fangdajing {
+  position: absolute;
+  left: 10px;
+  top: 13px;
+}
+.wrap7 .searchflex #topSearchInput {
+  width: 410px;
+  height: 24px;
+  line-height: 24px;
+  border: 0;
+  font-size: 13px;
+  outline: none;
+}
+.wrap7 .searchflex #tosearchbtn {
+  display: inline-block;
+  height: 40px;
+  width: 50px;
+  font-size: 19px;
+  line-height: 40px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 5px;
+  background: url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?v=1&x-oss-process=image%2Fresize%2Cw_20%2Ch_0%2Fquality%2Cq_85) no-repeat 50%;
+  background-image: -webkit-image-set(url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_20,h_0/quality,q_85&v=1) 1x, url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_40,h_0/quality,q_85&v=1) 2x);
+}
+.wrap7 .searchflex #fangdajing {
+  background: url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_20,h_0/quality,q_85&v=1);
+}
+.wrap7 .searchflex .m-shopcartnew {
+  display: block;
+  position: absolute;
+  right: 76px;
+  top: 33px;
+  width: 106px;
+  height: 36px;
+  background-color: #fff;
+  line-height: 36px;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 36px;
+  border: 2px solid #ff1e32;
+  text-decoration: none;
+}
+.wrap7 .searchflex .m-shopcartnew .s_wrap {
+  display: inline-block;
+  padding-left: 6px;
+  background: none;
+  vertical-align: middle;
+}
+.wrap7 .searchflex .m-shopcartnew .c_wrap {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 2px;
+  margin-bottom: -5px;
+  background: url(https://kaola-haitao.oss.kaolacdn.com/14f1eb69-f7c0-4d4f-95d8-4aee8e2e1f1b.png?x-oss-process=image%2Fresize%2Cw_20%2Ch_0%2Fquality%2Cq_90) no-repeat 0 0;
+}
+
 .slist .slist1, .banner .menu .slist-li {
   width: 164px;
   text-align: center;
@@ -365,6 +470,16 @@ table {
   text-decoration: none;
   color: #fff;
 }
+.banner .menu .slist-li:hover .cartlist {
+  display: block;
+}
+.banner .menu .selected {
+  font-weight: bold;
+  background: #fff;
+}
+.banner .menu .selected a {
+  color: red;
+}
 .banner .menu .cartlist {
   background: red;
   z-index: 50;
@@ -374,26 +489,31 @@ table {
   width: 926px;
   min-height: 460px;
   border: 1px solid #f7f7f7;
-  background-color: #fff;
+  background: #c1c1c1;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
   display: none;
   transition: top 0.5s ease;
 }
 .banner .menu .cartlist .item {
+  background: #fff;
   display: inline-block;
-  width: 250px;
-  height: 250px;
-  line-height: normal;
+  width: 500px;
+  height: 455px;
 }
 .banner .menu .cartlist .item a {
   margin-right: 20px;
+  text-decoration: none;
+  color: red;
 }
 .banner .menu .cartlist .item p {
+  font-weight: bold;
+  font-size: 22px;
+  border-bottom: 1px solid #ddd;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
   color: #333;
   font-size: 15px;
-}
-.banner .menu:hover .cartlist {
-  display: block;
 }
 .banner .content {
   width: 1090px;
@@ -405,10 +525,6 @@ table {
   position: absolute;
   left: 50%;
   margin-left: -960px;
-  display: none;
-}
-.banner .content .active {
-  display: block;
 }
 .banner .content ol {
   position: absolute;
@@ -420,7 +536,7 @@ table {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: #fff;
+  background: #999;
   text-indent: -999em;
   margin-right: 10px;
 }
@@ -497,41 +613,45 @@ table {
   background-color: #ddd;
   position: relative;
 }
-.wrap3 .imgwrap {
+.wrap3 .wrap-h .imgwrap {
   width: 1090px;
   height: 308px;
   position: relative;
 }
-.wrap3 .imgwrap img {
+.wrap3 .wrap-h .imgwrap img {
   position: absolute;
   left: 50%;
   margin-left: -960px;
 }
-.wrap3 .loutinav {
-  position: absolute;
-  left: -110px;
-  top: 0;
-  z-index: 10;
-  background-color: #fff;
+.wrap3 .wrap-h .rain {
+  position: fixed;
+  top: 35px;
 }
-.wrap3 .loutinav li {
+.wrap3 .wrap-h .loutinav {
+  position: absolute;
+  left: -120px;
+  top: 0px;
+  z-index: 550;
+  background-color: red;
+}
+.wrap3 .wrap-h .loutinav li {
   height: 32px;
   line-height: 32px;
   padding-left: 9px;
   color: #999;
   cursor: pointer;
 }
-.wrap3 .loutinav li span {
+.wrap3 .wrap-h .loutinav li span {
   margin-top: 10px;
   display: block;
   width: 97px;
   height: 32px;
   font-size: 18px;
 }
-.wrap3 .loutinav li:hover {
+.wrap3 .wrap-h .loutinav li:hover {
   color: red;
 }
-.wrap3 .loutinav li img {
+.wrap3 .wrap-h .loutinav li img {
   display: block;
   height: 80px;
   width: 100px;
@@ -591,8 +711,8 @@ table {
 .section1 .s1-h .s1-m .s1-li {
   box-sizing: border-box;
   float: left;
-  width: 273px;
-  height: 250px;
+  width: 275px;
+  height: 272px;
   background-color: #fff;
   text-align: center;
   padding-top: 20px;
