@@ -4,7 +4,8 @@
     .h_top {
         width: 1090px;
         margin: 0 auto;
-        height: 50px;
+        line-height: 30px;
+        height: 30px;
         display: flex;
         .top_left {
             //登录注册
@@ -46,35 +47,12 @@
                     text-decoration: none;
                     color: #999;
                 }
-                .drop {
-                    //下拉菜单
-                    z-index: 5;
-                    position: absolute;
-                    width: 80px;
-                    line-height: 40px;
-                    background: #fff;
-                    top: 30px;
-                    display: block;
-                    .drop-1-li,
-                    .drop-2-li,
-                    .drop-3-li {
-                        height: 20px;
-                        line-height: 20px;
-                        border: 1px solid #999;
-                        &:hover {
-                            color: red;
-                        }
-                    }
-                }
             }
         }
         .active {
             &:hover .s3_a,
             .iconfont {
                 color: red;
-            }
-            &:hover .drop {
-                display: block;
             }
         }
     }

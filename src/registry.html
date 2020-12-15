@@ -6,11 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注册页面</title>
-    <link rel="stylesheet" href="style/logintop.css">
+    <link rel="stylesheet" href="style/otherpages/logintop.css">
+    <link rel="stylesheet" href="style/otherpages/loginfpro.css">
+    <link rel="stylesheet" href="style/otherpages/listfooter.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul,
+        ol,
+        li {
+            list-style: none;
+        }
+        
+        .fp,
+        .tp {
+            width: 450px;
+            height: 30px;
+        }
+        
+        .np {
+            margin-top: 15px;
+        }
+        
+        #login {
+            width: 70px;
+            height: 40px;
+            margin-right: 30px;
+        }
+        
+        .np a {
+            text-decoration: none;
+        }
+        
+        .pic {
+            background: url();
+            float: left;
+            position: absolute;
+            left: 200px;
+            top: 130px;
+            width: 500px;
+            height: 300px;
+        }
+        
+        .pic img {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body>
-
+    <!--顶部-->
     <div class="top">
         <div class="h_top">
             <div class="top_left">
@@ -24,65 +73,80 @@
                 <span class="s3 active">
                     <a href="javascript:;" class="s3_a">我的订单</a> 
                     <span class="iconfont icon-xiasanjiaoxing "></span>
-                <div class="drop">
-                    <ul>
-                        <li class="drop-1-li">我的优惠卷</li>
-                        <li class="drop-1-li">我的购物津贴</li>
-                        <li class="drop-1-li">我的红包</li>
-                        <li class="drop-1-li">我的考拉</li>
-                    </ul>
-                </div>
                 </span>
                 <span class="s3 active">
                     <a href="javascript:;" class="s3_a">
                         个人中心
                     </a> 
                     <span class="iconfont icon-xiasanjiaoxing "></span>
-                <div class="drop">
-                    <ul>
-                        <li class="drop-1-li">我的优惠卷</li>
-                        <li class="drop-1-li">我的购物津贴</li>
-                        <li class="drop-1-li">我的红包</li>
-                        <li class="drop-1-li">我的考拉</li>
-                    </ul>
-                </div>
                 </span>
                 <span class="s3 active">
                     <a href="javascript:;" class="s3_a">客户服务</a> 
                     <span class="iconfont icon-xiasanjiaoxing "></span>
-                <div class="drop">
-                    <ul>
-                        <li class="drop-2-li">客户服务</li>
-                        <li class="drop-2-li">帮助中心</li>
-                        <li class="drop-2-li">只是产权保护</li>
-                        <li class="drop-2-li">规则中心</li>
-                    </ul>
-                </div>
                 </span>
                 <span class="s3 active">
                     <a href="javascript:;" class="s3_a">充值中心</a>
                     <span class="iconfont icon-xiasanjiaoxing "></span>
-                <div class="drop ">
-                    <ul>
-                        <li class="drop-3-li">话费充值</li>
-                        <li class="drop-3-li">游戏充值</li>
-                    </ul>
-                </div>
                 </span>
                 <span class="s3"><a href="javascript:;" class="s3_a">消费者权益</a> </span>
                 <span class="s3"><a href="javascript:;" class="s3_a">视频内容</a> </span>
             </div>
         </div>
     </div>
-    <fieldset style="width:500px;margin:0 auto;">
+    <div class="pic">
+        <img src="https://kaola-haitao.oss.kaolacdn.com/e2722b45-286b-45e9-a8e2-4558f4f1bee6.png" alt="">
+    </div>
+    <fieldset style="width:500px;height:300px; margin:100px 0 0 800px;">
         <legend>用户注册</legend>
-        <form action="http://localhost/dashboard/JS2010/week06/Day%2029-Day%2031_jquery/projectname/php/reg.php" method="post">
-            <p><label for="">用户名：</label><input type="text" name="username" id="username"><span></span></p>
-            <p><label for="">密　码：</label><input type="password" name="password"></p>
+        <form action="http://10.31.161.100/dashboard/kaola/php/reg.php" method="post">
+            <p class="fp"><label for="">用户名：</label><input type="text" name="username" id="username"><span></span></p>
+            <p class="tp"><label for="">密　码：</label><input type="password" name="password"></p>
             <p><label for="">邮　箱：</label><input type="text" name="email"></p>
-            <p><input type="submit" value="提交注册" name="submit" id="submit"></p>
+            <p class="np"><input type="submit" value="提交注册" name="submit" id="submit"></p>
         </form>
     </fieldset>
+    <!--正品承诺-->
+    <div class="f-pro">
+        <div class="footbox">
+            <ul class="clearfix">
+                <li>
+                    <div class="btmIcon">正</div>
+                    <strong class="tit">正品承诺</strong>
+                    <span class="desc">正品保障 假一赔十
+                    </span>
+                </li>
+                <li>
+                    <div class="btmIcon">低</div><strong class="tit">低价保障</strong> <span class="desc">缩减中间环节 确保低价</span></li>
+                <li>
+                    <div class="btmIcon">退</div><strong class="tit">30天无忧退货</strong> <span class="desc">国内退货 售后无忧</span>
+                </li>
+                <li class="last">
+                    <div class="btmIcon">邮</div><strong class="tit">满88包邮</strong> <span class="desc">部分特殊商品除外</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--最后的底部-->
+    <footer>
+        <div class="f-h">
+            <span class="m-license">增值电信业务经营许可证：浙B2-20160288</span>
+            <span class="m-license">（浙）网械平台备字[2018]第00007号</span>
+            <span class="m-license">阿里巴巴版权所有©2003-2020</span>
+            <a style="margin-left: 20px;">隐私政策</a>
+            <a style="margin-left:20px;">考拉海购</a>
+            <span class="m-license">网络文化经营许可证：浙网文（2020）4340-180号</span>
+            <span class="m-license">网络文化经营许可证：浙网文（2020）4340-180号</span>
+            <br>
+            <img src="//kaola-haitao.oss.kaolacdn.com/f28aa8ee818a42bf832341f605eccefb.png" _pi="1"><span style="margin: 0px 0px 0px 5px;">浙公网安备 33010802002216号</span>
+            <span style="margin: 0px 0px 0px 20px;">互联网药品信息服务资格证书编号（浙）-2017-0027</span>
+            <span style="margin: 0px 0px 0px 20px;">浙ICP备16011229号</span>
+            <span style="margin: 0px 0px 0px 20px;">自营者信息</span>
+            <br>
+            <img src="//kaola-haitao.oss.kaolacdn.com/d720d83b55a04b6f932ea845c673c5bf.png" alt="可信网站" _pi="1" data-spm-anchor-id="a2v0d.13659821.0.i13.2178b0d8TFiSDh">
+            <img src="//img.alicdn.com/tfs/TB1rcIoq.Y1gK0jSZFCXXcwqXXa-65-70.png" alt="工商营业执照网上标识" _pi="1" data-spm-anchor-id="a2v0d.13659821.0.i14.2178b0d8TFiSDh" style="margin-top:5px;">
+
+        </div>
+    </footer>
 </body>
 
 </html>

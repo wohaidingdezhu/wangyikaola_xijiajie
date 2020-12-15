@@ -138,14 +138,15 @@ table {
 .top {
   width: 100%;
   background-color: #000;
+  position: relative;
 }
 .top .h_top {
   height: 30px;
-  display: flex;
 }
 .top .h_top .top_left {
-  width: 40%;
-  display: flex;
+  height: 30px;
+  width: 250px;
+  float: left;
 }
 .top .h_top .top_left .login,
 .top .h_top .top_left .registry {
@@ -153,23 +154,28 @@ table {
   line-height: 30px;
   color: #999;
   font-size: 12px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
-.top .h_top .top_left .login {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.top .h_top .top_left .registry {
-  margin-right: 20px;
-}
-.top .h_top .top_left .s1,
-.top .h_top .top_left .s2 {
-  display: block;
+.top .h_top .top_left span {
   font-size: 12px;
   line-height: 30px;
   color: #999;
 }
+.top .h_top .admin {
+  display: none;
+  line-height: 30px;
+  position: absolute;
+  float: left;
+  color: #fff;
+  font-size: 12px;
+}
+.top .h_top .admin a {
+  text-decoration: none;
+  color: #fff;
+}
 .top .h_top .top_right {
-  width: 60%;
+  float: right;
 }
 .top .h_top .top_right .s3 {
   display: block;
@@ -276,10 +282,8 @@ table {
   background: url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?v=1&x-oss-process=image%2Fresize%2Cw_20%2Ch_0%2Fquality%2Cq_85) no-repeat 50%;
   background-image: -webkit-image-set(url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_20,h_0/quality,q_85&v=1) 1x, url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_40,h_0/quality,q_85&v=1) 2x);
 }
-.search #fangdajing {
-  background: url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_20,h_0/quality,q_85&v=1);
-}
 .search .m-shopcartnew {
+  color: red;
   display: block;
   position: absolute;
   right: 76px;
@@ -311,6 +315,7 @@ table {
 
 .wrap7 {
   width: 100%;
+  background-color: #ff0000;
   position: relative;
 }
 .wrap7 .searchflex {
@@ -348,7 +353,6 @@ table {
 }
 .wrap7 .searchflex #topsearch .wrap {
   width: 380px;
-  margin: 1px 0px;
   padding: 6px 39px 6px 30px;
   background-color: #fff;
   border-radius: 24px 0 0 24px;
@@ -420,6 +424,7 @@ table {
   background-color: red;
   font-size: 14px;
   color: #fff;
+  background-color: #fff;
 }
 
 .slist {
@@ -570,6 +575,8 @@ table {
   display: block;
 }
 .banner .m-sellpoint {
+  overflow: hidden;
+  width: 100%;
   position: relative;
   margin-top: 0px;
   margin-bottom: 20px;
@@ -577,6 +584,7 @@ table {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .banner .m-sellpoint .h-sellepoint {
+  overflow: hidden;
   margin: 0 auto;
   width: 1090px;
 }
@@ -632,7 +640,7 @@ table {
   left: -120px;
   top: 0px;
   z-index: 550;
-  background-color: red;
+  background-color: #fff;
 }
 .wrap3 .wrap-h .loutinav li {
   height: 32px;

@@ -7,7 +7,7 @@ define(['jcookie'], () => {
             }
             //2.将sid传给后端，后端根据对应的sid返回不同的数据。
             $.ajax({
-                url: 'http://localhost/dashboard/JS2010/week06/Day%2029-Day%2031_jquery/projectname/php/detail.php',
+                url: 'http://10.31.161.100/dashboard/kaola/php/detail.php',
                 data: {
                     sid: $sid
                 },

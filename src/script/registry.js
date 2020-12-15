@@ -5,7 +5,7 @@
     $username.on('blur', function() {
         $.ajax({
             type: 'post',
-            url: 'http://localhost/dashboard/JS2010/week06/Day%2029-Day%2031_jquery/projectname/php/reg.php',
+            url: 'http://10.31.161.100/dashboard/kaola/php/reg.php',
             data: {
                 xingming: $username.val()
             }

@@ -24,7 +24,7 @@ define(['jlazyload'], () => {
             //渲染数据第一块运动户外
             const $list2 = $('.list1234');
             $.ajax({
-                url: 'http://localhost/dashboard/kaola/php/index.php',
+                url: 'http://10.31.161.100/dashboard/kaola/php/index.php',
                 dataType: 'json'
             }).done(function(data) { //一个页面对应所有的数据接口
                 let $strhtml = '';
@@ -34,23 +34,21 @@ define(['jlazyload'], () => {
                         <li class="s1-li">
                                 <h3 class="tit1">${value.title}</h3>
                                 <p class="s1-into">${value.intro}</p>
-                                <img class="img-lazyload u-loaded" src="${value.url}">
+                                <img class="lazy" data-original="${value.url}"/>
                         </li>
                     `;
                     }
                 });
                 $list2.html($strhtml);
-                $(function() { //页面加载完成
-                    $("img.lazy").lazyload({
-                        effect: "fadeIn" //显示方法：淡入
-                    });
-                });
+                //懒加载
+                $("img.lazy").lazyload({ effect: "fadeIn" });
+
             });
 
             // //渲染数据第二块美妆专区
             const $list3 = $('.list5678');
             $.ajax({
-                url: 'http://localhost/dashboard/kaola/php/index.php',
+                url: 'http://10.31.161.100/dashboard/kaola/php/index.php',
                 dataType: 'json'
             }).done(function(data) { //一个页面对应所有的数据接口
                 let $strhtml = '';
@@ -61,17 +59,14 @@ define(['jlazyload'], () => {
                         <li class="s1-li">
                             <h3 class="tit1">${value.title}</h3>
                             <p class="s1-into">${value.intro}</p>
-                            <img class="img-lazyload u-loaded" src="${value.url}">
+                            <img class="lazy" data-original="${value.url}"/>
                         </li>
                         `;
                     }
                 });
                 $list3.html($strhtml);
-                $(function() { //页面加载完成
-                    $("img.lazy").lazyload({
-                        effect: "fadeIn" //显示方法：淡入
-                    });
-                });
+                //懒加载
+                $("img.lazy").lazyload({ effect: "fadeIn" });
             });
 
             //轮播
@@ -175,8 +170,6 @@ define(['jlazyload'], () => {
             $(window).on('scroll', () => {
                 let $scrolltop = $(window).scrollTop(); //获取滚动条top值
                 if ($scrolltop >= 40) {
-                    // clearInterval(timer);
-                    console.log($scrolltop);
                     $topxuanfu.css({
                         // top: 0 //改变topxuanfu的top值参数 就是定位的那个参数
                         "position": "fixed",
@@ -191,10 +184,24 @@ define(['jlazyload'], () => {
                 }
             });
 
+            //登录后显示名字
+            //检测是否用户已经登录
+            if (localStorage.getItem('loginname')) {
+                $('.admin').show();
+                $('.top_left').hide();
+                $('.admin span').html(localStorage.getItem('loginname'));
+            }
+            //退出登录 - 删除本地存储
+            $('.admin a').on('click', function() {
+                $('.admin').hide();
+                $('.top_left').show();
+                localStorage.removeItem('loginname');
+            });
 
             // 侧边栏悬浮
-
             const $aside = $('.loutinav');
+            const $louti = $('.loutinav li');
+            const $louceng = $('.section-pic');
             $(window).on('scroll', () => {
                 let $scrolltop = $(window).scrollTop(); //获取滚动条top值
                 if ($scrolltop >= 636) {
@@ -214,6 +221,16 @@ define(['jlazyload'], () => {
                     })
                 }
             });
+
+
+            $louti.on('click', function() {
+                //$(this)每层楼梯的索引是对应的楼层
+                var $loucengtop = $louceng.eq($(this).index()).offset().top; //每个楼层的top
+                $('html').animate({
+                    scrollTop: $loucengtop //每个楼层的top值求出，然后给滚动条的top值
+                });
+            });
+
         }
     }
 });

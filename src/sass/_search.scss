@@ -65,10 +65,11 @@
         background: url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?v=1&x-oss-process=image%2Fresize%2Cw_20%2Ch_0%2Fquality%2Cq_85) no-repeat 50%;
         background-image: -webkit-image-set(url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_20,h_0/quality,q_85&v=1) 1x, url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_40,h_0/quality,q_85&v=1) 2x);
     }
-    #fangdajing {
-        background: url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_20,h_0/quality,q_85&v=1);
-    }
+    // #fangdajing {
+    //     background: url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_20,h_0/quality,q_85&v=1);
+    // }
     .m-shopcartnew {
+        color: red;
         display: block;
         position: absolute;
         right: 76px;
@@ -101,6 +102,7 @@
 
 .wrap7 {
     width: 100%;
+    background-color: #ff0000;
     // border: 1px solid red;
     position: relative;
     .searchflex {
@@ -125,17 +127,10 @@
             margin: 5px 5px 0 0;
         }
         .search_m {
-            // 中间的搜索框
-            // position: absolute;
-            // left: 340px;
-            // top: 5px;
             margin-top: 5px;
             float: left;
         }
         #topsearch {
-            //整个框
-            // position: absolute;
-            // // top: -30px;
             width: 510px;
             height: 38px;
             padding-left: 1px;
@@ -143,7 +138,6 @@
             border-radius: 40px;
             .wrap {
                 width: 380px;
-                margin: 1px 0px;
                 padding: 6px 39px 6px 30px;
                 background-color: #fff;
                 border-radius: 24px 0 0 24px;

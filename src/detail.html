@@ -5,15 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>商品详情页</title>
-    <link rel="stylesheet" href="css/detail.css">
+
+    <link rel="stylesheet" href="style/otherpages/detail.css">
+    <link rel="stylesheet" href="style/otherpages/logintop.css">
+    <link rel="stylesheet" href="style/otherpages/listintro.css">
+    <link rel="stylesheet" href="style/otherpages/loginfpro.css">
+    <link rel="stylesheet" href="style/otherpages/listfooter.css">
+
+
     <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js" defer async=true data-main="script/main.js" id="currentpage" data-origin="detail_module"></script>
 </head>
 
 <body>
-    <div class="goodsinfo">
-        <div class="box">
-            <a href="cart.html" target="_blank">进入购物车</a>
+    <!--头部-->
+    <div class="top">
+        <div class="h_top">
+            <div class="top_left">
+                <span class="s1">考拉欢迎你！</span>
+                <a href="login.html" class="login">登录</a>
+                <a href="registry.html" class="registry">注册</a>
+                <span class="s2">手机考拉</span>
+            </div>
+            <div class="top_right">
+                <span class="s3"><a href="javascript:;" class="s3_a">每日签到</a> </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">我的订单</a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">
+                        个人中心
+                    </a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">客户服务</a> 
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+                </span>
+                <span class="s3 active">
+                    <a href="javascript:;" class="s3_a">充值中心</a>
+                    <span class="iconfont icon-xiasanjiaoxing "></span>
+                </span>
+                <span class="s3"><a href="javascript:;" class="s3_a">消费者权益</a> </span>
+                <span class="s3"><a href="javascript:;" class="s3_a">视频内容</a> </span>
+            </div>
         </div>
+    </div>
+    <!--搜索框-->
+    <div class="search">
+        <a href="https://www.kaola.com/" class="logo_kaola_new" title="考拉海购" data-param="zn=top"></a>
+        <div class="search_m">
+            <div id="topsearchbox">
+                <div id="topsearch">
+                    <div class="wrap">
+                        <input id="topSearchInput" type="text" placeholder="飞利浦电动牙刷">
+                        <span id="tosearchbtn"></span>
+                        <span class="iconfont icon-fangdajing"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="cart.html" id="j-newcart_btn" class="m-shopcartnew">
+            <span class="c_wrap"></span>
+            <span class="s_wrap">购物车</span>
+        </a>
+    </div>
+    <div class="goodsinfo">
         <div class="wrap">
             <div id="spic">
                 <img src="" alt="" id="smallpic">
@@ -44,6 +103,49 @@
             </div>
         </div>
     </div>
+
+    <!--底部-->
+    <div class="f-pro">
+        <div class="footbox">
+            <ul class="clearfix">
+                <li>
+                    <div class="btmIcon">正</div>
+                    <strong class="tit">正品承诺</strong>
+                    <span class="desc">正品保障 假一赔十
+                </span>
+                </li>
+                <li>
+                    <div class="btmIcon">低</div><strong class="tit">低价保障</strong> <span class="desc">缩减中间环节 确保低价</span></li>
+                <li>
+                    <div class="btmIcon">退</div><strong class="tit">30天无忧退货</strong> <span class="desc">国内退货 售后无忧</span>
+                </li>
+                <li class="last">
+                    <div class="btmIcon">邮</div><strong class="tit">满88包邮</strong> <span class="desc">部分特殊商品除外</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--最后的底部-->
+    <footer>
+        <div class="f-h">
+            <span class="m-license">增值电信业务经营许可证：浙B2-20160288</span>
+            <span class="m-license">（浙）网械平台备字[2018]第00007号</span>
+            <span class="m-license">阿里巴巴版权所有©2003-2020</span>
+            <a style="margin-left: 20px;">隐私政策</a>
+            <a style="margin-left:20px;">考拉海购</a>
+            <span class="m-license">网络文化经营许可证：浙网文（2020）4340-180号</span>
+            <span class="m-license">网络文化经营许可证：浙网文（2020）4340-180号</span>
+            <br>
+            <img src="//kaola-haitao.oss.kaolacdn.com/f28aa8ee818a42bf832341f605eccefb.png" _pi="1"><span style="margin: 0px 0px 0px 5px;">浙公网安备 33010802002216号</span>
+            <span style="margin: 0px 0px 0px 20px;">互联网药品信息服务资格证书编号（浙）-2017-0027</span>
+            <span style="margin: 0px 0px 0px 20px;">浙ICP备16011229号</span>
+            <span style="margin: 0px 0px 0px 20px;">自营者信息</span>
+            <br>
+            <img src="//kaola-haitao.oss.kaolacdn.com/d720d83b55a04b6f932ea845c673c5bf.png" alt="可信网站" _pi="1" data-spm-anchor-id="a2v0d.13659821.0.i13.2178b0d8TFiSDh">
+            <img src="//img.alicdn.com/tfs/TB1rcIoq.Y1gK0jSZFCXXcwqXXa-65-70.png" alt="工商营业执照网上标识" _pi="1" data-spm-anchor-id="a2v0d.13659821.0.i14.2178b0d8TFiSDh" style="margin-top:5px;">
+
+        </div>
+    </footer>
 </body>
 
 </html>
