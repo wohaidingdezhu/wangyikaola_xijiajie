@@ -1,0 +1,246 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    background-color: #eee;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.top .h_top,
+.search,
+.slist,
+.banner .wrap,
+.wrap3 .wrap-h,
+.title1 .title1-h,
+.section1 .s1-h,
+.section-pic .sectionpic-h,
+.f-pro .footbox,
+.footBgWrap .navbox,
+footer .f-h {
+    width: 1090px;
+    margin: 0 auto;
+}
+
+.top {
+    width: 100%;
+    background-color: #000;
+    position: relative;
+}
+
+.top .h_top {
+    height: 30px;
+}
+
+.top .h_top .top_left {
+    height: 30px;
+    width: 250px;
+    float: left;
+}
+
+.top .h_top .top_left .login,
+.top .h_top .top_left .registry {
+    text-decoration: none;
+    line-height: 30px;
+    color: #999;
+    font-size: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.top .h_top .top_left span {
+    font-size: 12px;
+    line-height: 30px;
+    color: #999;
+}
+
+.top .h_top .admin {
+    display: none;
+    line-height: 30px;
+    position: absolute;
+    float: left;
+    color: #fff;
+    font-size: 12px;
+}
+
+.top .h_top .admin a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.top .h_top .top_right {
+    float: right;
+}
+
+.top .h_top .top_right .s3 {
+    display: block;
+    float: left;
+    line-height: 30px;
+    cursor: pointer;
+    margin-right: 30px;
+    font-size: 12px;
+    position: relative;
+}
+
+.top .h_top .top_right .s3 .s3_a {
+    text-decoration: none;
+    color: #999;
+}
+
+.top .h_top .top_right .s3 .drop {
+    z-index: 5;
+    position: absolute;
+    width: 80px;
+    line-height: 40px;
+    background: #fff;
+    top: 30px;
+    display: none;
+}
+
+.top .h_top .top_right .s3 .drop .drop-1-li,
+.top .h_top .top_right .s3 .drop .drop-2-li,
+.top .h_top .top_right .s3 .drop .drop-3-li {
+    height: 20px;
+    line-height: 20px;
+    border: 1px #999 solid;
+}
+
+.top .h_top .top_right .s3 .drop .drop-1-li:hover,
+.top .h_top .top_right .s3 .drop .drop-2-li:hover,
+.top .h_top .top_right .s3 .drop .drop-3-li:hover {
+    color: red;
+}
+
+.top .h_top .active:hover .s3_a,
+.top .h_top .active .iconfont {
+    color: red;
+}
+
+.top .h_top .active:hover .drop {
+    display: block;
+}

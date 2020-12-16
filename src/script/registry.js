@@ -1,6 +1,6 @@
 ! function($) {
     const $username = $('#username');
-    const $span = $('span');
+    const $span = $('.yonghumings');
 
     $username.on('blur', function() {
         $.ajax({

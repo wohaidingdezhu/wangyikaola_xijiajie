@@ -1,20 +1,20 @@
 footer {
-  width: 100%;
-  background-color: #333;
-}
-footer .f-h {
-  margin: 0 auto;
-  width: 1080px;
-  height: 153px;
-  position: relative;
-  padding: 20px 0;
-  background: #333;
-  line-height: 26px;
-  text-align: center;
-  color: #c2c2c2;
-}
-footer .f-h .m-license {
-  margin-left: 20px;
+    width: 100%;
+    background-color: #333;
 }
 
-/*# sourceMappingURL=listfooter.css.map */
+footer .f-h {
+    margin: 0 auto;
+    width: 1080px;
+    height: 153px;
+    position: relative;
+    padding: 20px 0;
+    background: #333;
+    line-height: 26px;
+    text-align: center;
+    color: #c2c2c2;
+}
+
+footer .f-h .m-license {
+    margin-left: 20px;
+}

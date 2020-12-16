@@ -1,7 +1,7 @@
 ! function($) {
     const $username = $('#username');
     const $password = $('#password');
-    const $login = $('#login'); //登录按钮
+    const $login = $('.s5'); //登录按钮
 
     $login.on('click', function() {
         $.ajax({

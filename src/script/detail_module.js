@@ -1,8 +1,23 @@
 define(['jcookie'], () => {
     return {
         init: function() {
+            //登录后显示名字
+            //检测是否用户已经登录
+            if (localStorage.getItem('loginname')) {
+                $('.admin').show();
+                $('.top_left').hide();
+                $('.admin span').html(localStorage.getItem('loginname'));
+            }
+            //退出登录 - 删除本地存储
+            $('.admin a').on('click', function() {
+                $('.admin').hide();
+                $('.top_left').show();
+                localStorage.removeItem('loginname');
+            });
+
+            //1.通过地址栏获取列表页面传入的sid。
             let $sid = location.search.substring(1).split('=')[1]; //得到side 4
-            if (!$sid) { //没有值 输出乱七八糟的东西 不存在为假
+            if (!$sid) { //没有值 输出乱七八糟的东西 不存在为假 列表页面没有传入sid，默认为1
                 $sid = 1;
             }
             //2.将sid传给后端，后端根据对应的sid返回不同的数据。
@@ -13,17 +28,17 @@ define(['jcookie'], () => {
                 },
                 dataType: 'json'
             }).done(function(data) { //后端php页面根据sid找到数据库对应那条数据
-                console.log(data);
-                console.log(data.urls);
+                // console.log(data);
+                // console.log(data.urls);
                 //获取数据，将数据放入对应的结构中。
                 $('#smallpic').attr('src', data.url);
                 $('.loadtitle').html(data.title);
                 $('.loadpcp').html(data.price);
-
+                $('#bpic').attr('src', data.url);
                 //渲染放大镜下面的小图
                 let $picurl = data.urls.split(','); //将数据转换成数组。
                 let $strhtml = '';
-                const $list = $('#list');
+                const $list = $('#list ul');
                 console.log($picurl);
                 $.each($picurl, function(index, value) {
                     $strhtml += `
@@ -34,7 +49,92 @@ define(['jcookie'], () => {
                 });
                 $list.html($strhtml);
             });
-            //五.购物车：(商品sid、商品数量)
+            //放大镜效果
+            const $spic = $('#spic');
+            const $bpic = $('#bpic');
+            const $sf = $('#sf'); //小放
+            const $bf = $('#bf'); //大放
+            const $left = $('#left'); //左箭头
+            const $right = $('#right'); //右箭头
+            const $list = $('#list'); //小图列表
+            //$spic 小图   $bpic 大图  
+
+            //小放/大放=小图/大图
+            $sf.width($spic.width() * $bf.width() / $bpic.width());
+            $sf.height($spic.height() * $bf.height() / $bpic.height());
+            let $bili = $bpic.width() / $spic.width(); //比例大于1 放大效果
+            $spic.hover(function() {
+                $sf.css('visibility', 'visible');
+                $bf.css('visibility', 'visible');
+                $(this).on('mousemove', function(ev) {
+                    let $leftvalue = ev.pageX - $('.goodsinfo').offset().left - $sf.width() / 2;
+                    let $topvalue = ev.pageY - $('.goodsinfo').offset().top - $sf.height() / 2;
+                    if ($leftvalue < 0) {
+                        $leftvalue = 0;
+                    } else if ($leftvalue >= $spic.width() - $sf.width()) {
+                        $leftvalue = $spic.width() - $sf.width()
+                    }
+
+                    if ($topvalue < 0) {
+                        $topvalue = 0;
+                    } else if ($topvalue >= $spic.height() - $sf.height()) {
+                        $topvalue = $spic.height() - $sf.height()
+                    }
+
+                    $sf.css({
+                        left: $leftvalue,
+                        top: $topvalue
+                    });
+
+                    $bpic.css({
+                        left: -$leftvalue * $bili,
+                        top: -$topvalue * $bili
+                    });
+
+                });
+            }, function() {
+                $sf.css('visibility', 'hidden');
+                $bf.css('visibility', 'hidden');
+            });
+            //小图切换 - 小图是渲染出来的，找不到li。
+            $list.on('click', 'li', function() { //事件委托,ul元素没有高度不可见，委托#list
+                let imgurl = $(this).find('img').attr('src'); //获取当前图片的地址
+                $('#smallpic').attr('src', imgurl);
+                $('#bpic').attr('src', imgurl);
+            });
+            //左右箭头事件
+            let $num = 6; //列表显示的图片个数,重要的信息
+            $right.on('click', function() {
+                console.log($(this));
+                let $lists = $('#list ul li');
+                if ($lists.size() > $num) { //限制点击的条件，如果$num值小于li的长度，继续点击右键头
+                    $num++;
+                    $left.css('color', '#333');
+                    if ($lists.size() == $num) {
+                        $right.css('color', '#fff');
+                    }
+
+                    //列表运动
+                    $('#list ul').animate({
+                        left: -($num - 6) * $lists.eq(0).outerWidth(true)
+                    });
+                }
+            });
+            $left.on('click', function() {
+                let $lists = $('#list ul li');
+                if ($num > 6) { //限制点击的条件
+                    $num--;
+                    $right.css('color', '#333');
+                    if ($num <= 6) {
+                        $left.css('color', '#fff');
+                    }
+                    $('#list ul').animate({
+                        left: -($num - 6) * $lists.eq(0).outerWidth(true)
+                    });
+                }
+            });
+
+            //购物车：(商品sid、商品数量)
             //1.设置存储cookie的变量。
             let arrsid = []; //存储商品的sid
             let arrnum = []; //存储商品的数量

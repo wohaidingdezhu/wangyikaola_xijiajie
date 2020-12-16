@@ -19,7 +19,7 @@ define(['pagination', 'jlazyload'], function() {
                 url: 'http://10.31.161.100/dashboard/kaola/php/listdata.php',
                 dataType: 'json'
             }).done(function(datalist) {
-                console.log(datalist);
+                console.log(datalist); //返回的是一个对象，因为加了page数据接口
                 data = datalist.pagedata; //获取接口里面数据
                 let $strhtml = '';
                 $.each(data, function(index, value) {
@@ -37,9 +37,15 @@ define(['pagination', 'jlazyload'], function() {
                 //懒加载
                 $("img.lazy").lazyload({ effect: "fadeIn" });
 
+
                 //将li元素添加到排序前的数组中。
+                $array_default = [];
+                $array = [];
                 $('.list li').each(function(index, element) { //element:原生的元素对象
                     $array_default[index] = $(this); //排序前
+                    //比如每页长度是15，数组里面有15项
+                    //index:0-14
+                    //如果数据不够15条，只有10条，替换前面的10条，后面还多余了5条
                     $array[index] = $(this); //排序后
                 });
                 console.log($array_default);
@@ -56,7 +62,7 @@ define(['pagination', 'jlazyload'], function() {
                         $.ajax({
                             url: 'http://10.31.161.100/dashboard/kaola/php/listdata.php',
                             data: {
-                                page: api.getCurrent()
+                                page: api.getCurrent() //传入点击的页码
                             },
                             dataType: 'json'
                         }).done(function(datalist) {
@@ -86,8 +92,6 @@ define(['pagination', 'jlazyload'], function() {
                         });
                     }
                 });
-
-
                 //3.点击综合进行默认排序 
                 $('button').eq(0).on('click', function() {
                     //遍历渲染。
@@ -95,14 +99,14 @@ define(['pagination', 'jlazyload'], function() {
                         $list.append(value);
                     });
                 });
-                //同一个按钮按一次是升序，再按一次是降序，这就可以利用开关思维                
+                //同一个按钮按一次是升序，再按一次是降序，这就可以利用开关思维冒泡排序，两两比较i代表轮数，j代表次数。10个数字只要比较九轮i-1                
                 var flag = true;
                 $('button').eq(1).on('click', function() {
                     if (flag) {
                         //升序
                         for (let i = 0; i < $array.length - 1; i++) {
                             for (let j = 0; j < $array.length - i - 1; j++) {
-                                $prev = parseFloat($array[j].find('span').html().substring(1)); //上一个价格
+                                $prev = parseFloat($array[j].find('span').html().substring(1)); //上一个价格 截取掉￥
                                 $next = parseFloat($array[j + 1].find('span').html().substring(1)); //下一个价格
                                 if ($prev > $next) {
                                     //通过价格的比较,交换的是里面的这个li元素
@@ -138,55 +142,22 @@ define(['pagination', 'jlazyload'], function() {
                         flag = true;
                     }
                 });
-                // var flag = true; //开关思维
-                // btn.onclick = function() {
-                //     if (flag) { //flag = true
-                //         box.style.display = 'block'; //设置css属性值。
-                //         flag = false;
-                //     } else {
-                //         box.style.display = 'none'; //设置css属性值。
-                //         flag = true;
-                //     }
-                // };
-
-
-                // $('button').eq(1).on('click', function() {
-                //     for (let i = 0; i < $array.length - 1; i++) {
-                //         for (let j = 0; j < $array.length - i - 1; j++) {
-                //             $prev = parseFloat($array[j].find('span').html().substring(1)); //上一个价格
-                //             $next = parseFloat($array[j + 1].find('span').html().substring(1)); //下一个价格
-                //             if ($prev > $next) {
-                //                 //通过价格的比较,交换的是里面的这个li元素
-                //                 let temp = $array[j];
-                //                 $array[j] = $array[j + 1];
-                //                 $array[j + 1] = temp;
-                //             }
-                //         }
-                //     }
-                //     //遍历渲染。
-                //     $.each($array, function(index, value) { //value就是li元素
-                //         $list.append(value);
-                //     });
-                // });
-                // $('button').eq(2).on('click', function() {
-                //     for (let i = 0; i < $array.length - 1; i++) {
-                //         for (let j = 0; j < $array.length - i - 1; j++) {
-                //             $prev = parseFloat($array[j].find('span').html().substring(1)); //上一个价格
-                //             $next = parseFloat($array[j + 1].find('span').html().substring(1)); //下一个价格
-                //             if ($prev < $next) {
-                //                 //通过价格的比较,交换的是里面的这个li元素
-                //                 let temp = $array[j];
-                //                 $array[j] = $array[j + 1];
-                //                 $array[j + 1] = temp;
-                //             }
-                //         }
-                //     }
-                //     //遍历渲染。
-                //     $.each($array, function(index, value) { //value就是li元素
-                //         $list.append(value);
-                //     });
-                // });
             });
+
+            //登录后显示名字
+            //检测是否用户已经登录
+            if (localStorage.getItem('loginname')) {
+                $('.admin').show();
+                $('.top_left').hide();
+                $('.admin span').html(localStorage.getItem('loginname'));
+            }
+            //退出登录 - 删除本地存储
+            $('.admin a').on('click', function() {
+                $('.admin').hide();
+                $('.top_left').show();
+                localStorage.removeItem('loginname');
+            });
+
         }
     }
 });

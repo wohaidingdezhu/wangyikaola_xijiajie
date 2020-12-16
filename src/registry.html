@@ -6,56 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注册页面</title>
+    <link rel="stylesheet" href="style/otherpages/listtop.css">
+    <link rel="stylesheet" href="style/otherpages/loginborder.css">
     <link rel="stylesheet" href="style/otherpages/logintop.css">
-    <link rel="stylesheet" href="style/otherpages/loginfpro.css">
     <link rel="stylesheet" href="style/otherpages/listfooter.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        
-        ul,
-        ol,
-        li {
-            list-style: none;
-        }
-        
-        .fp,
-        .tp {
-            width: 450px;
-            height: 30px;
-        }
-        
-        .np {
-            margin-top: 15px;
-        }
-        
-        #login {
-            width: 70px;
-            height: 40px;
-            margin-right: 30px;
-        }
-        
-        .np a {
-            text-decoration: none;
-        }
-        
-        .pic {
-            background: url();
-            float: left;
-            position: absolute;
-            left: 200px;
-            top: 130px;
-            width: 500px;
-            height: 300px;
-        }
-        
-        .pic img {
-            width: 500px;
-            height: 300px;
-        }
-    </style>
+    <link rel="stylesheet" href="style/otherpages/loginfpro.css">
 </head>
 
 <body>
@@ -93,19 +48,6 @@
             </div>
         </div>
     </div>
-    <div class="pic">
-        <img src="https://kaola-haitao.oss.kaolacdn.com/e2722b45-286b-45e9-a8e2-4558f4f1bee6.png" alt="">
-    </div>
-    <fieldset style="width:500px;height:300px; margin:100px 0 0 800px;">
-        <legend>用户注册</legend>
-        <form action="http://10.31.161.100/dashboard/kaola/php/reg.php" method="post">
-            <p class="fp"><label for="">用户名：</label><input type="text" name="username" id="username"><span></span></p>
-            <p class="tp"><label for="">密　码：</label><input type="password" name="password"></p>
-            <p><label for="">邮　箱：</label><input type="text" name="email"></p>
-            <p class="np"><input type="submit" value="提交注册" name="submit" id="submit"></p>
-        </form>
-    </fieldset>
-    <!--正品承诺-->
     <div class="f-pro">
         <div class="footbox">
             <ul class="clearfix">
@@ -113,7 +55,7 @@
                     <div class="btmIcon">正</div>
                     <strong class="tit">正品承诺</strong>
                     <span class="desc">正品保障 假一赔十
-                    </span>
+                </span>
                 </li>
                 <li>
                     <div class="btmIcon">低</div><strong class="tit">低价保障</strong> <span class="desc">缩减中间环节 确保低价</span></li>
@@ -124,6 +66,26 @@
                     <div class="btmIcon">邮</div><strong class="tit">满88包邮</strong> <span class="desc">部分特殊商品除外</span>
                 </li>
             </ul>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="loginheart">
+            <img src="https://kaola-haitao.oss.kaolacdn.com/e2722b45-286b-45e9-a8e2-4558f4f1bee6.png" alt="">
+            <div class="loginbox">
+                <form action="http://10.31.161.100/dashboard/kaola/php/reg.php" method="post">
+                    <div class="logintop">
+                        <p>手机号注册</p>
+                        <span></span>
+                    </div>
+                    <div class="loginname">
+                        <input type="text" name="username" id="username" placeholder="请输入手机号">
+                    </div>
+                    <div class="mima">
+                        <input type="password" name="password" id="password" placeholder="请设置你的密码">
+                    </div>
+                    <input type="submit" value="提交注册" name="submit" id="submit" class="s5">
+                </form>
+            </div>
         </div>
     </div>
     <!--最后的底部-->

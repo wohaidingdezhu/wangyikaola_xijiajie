@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.fp {
+    width: 450px;
+    height: 50px;
+}
+
+.np {
+    margin-top: 15px;
+}
+
+#login {
+    width: 50px;
+    height: 30px;
+    margin-right: 30px;
+}
+
+.np>a {
+    text-decoration: none;
+    color: #000;
+    border: 1px solid #eee;
+}
+
+.wrap {
+    width: 100%;
+    background: #eee;
+}
+
+.loginheart {
+    height: 600px;
+    width: 1090px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.loginheart img {
+    position: absolute;
+    top: 150px;
+    left: 40px;
+    display: block;
+    float: left;
+}
+
+.loginbox {
+    position: absolute;
+    right: 100px;
+    top: 50px;
+    width: 350px;
+    height: 450px;
+    background-color: #fff;
+    float: left;
+}
+
+.logintop {
+    position: relative;
+    height: 50px;
+    text-align: center;
+    width: 350px;
+}
+
+.logintop p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logintop span {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: block;
+    background: url(https://kaola-haitao.oss.kaolacdn.com/f22b0657-dac4-4b0d-849f-92a1d0987207.png);
+}
+
+.mima,
+.loginbutton {
+    margin: 15px auto;
+    width: 270px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 1px solid #d5d5d5;
+}
+
+.loginname {
+    margin: 15px auto;
+    width: 270px;
+    line-height: 36px;
+    border-radius: 18px;
+    height: 36px;
+    border: 1px solid #d5d5d5;
+}
+
+.loginbutton {
+    background-color: red;
+}
+
+.mima input {
+    border: 1px solid transparent;
+    outline: none;
+    height: 30px;
+    padding: 0 0 0 15px;
+    margin-left: 5px;
+    width: 200px;
+}
+
+.loginname input {
+    width: 200px;
+    border: none;
+    outline: none;
+    height: 30px;
+    padding: 0 0 0 15px;
+    margin-left: 5px;
+    color: #000;
+}
+
+.s5 {
+    display: block;
+    height: 36px;
+    width: 270px;
+    background-color: red;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    line-height: 36px;
+    margin-left: 42px;
+    border-radius: 18px;
+}
+
+.s6 {
+    color: #000;
+    margin: 25px auto;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    height: 36px;
+    width: 270px;
+    background-color: red;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 36px;
+    border-radius: 18px;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
+}

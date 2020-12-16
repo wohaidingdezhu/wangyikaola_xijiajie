@@ -1,6 +1,20 @@
 define(['jcookie'], () => {
     return {
         init: function() {
+            //登录后显示名字
+            //检测是否用户已经登录
+            if (localStorage.getItem('loginname')) {
+                $('.admin').show();
+                $('.top_left').hide();
+                $('.admin span').html(localStorage.getItem('loginname'));
+            }
+            //退出登录 - 删除本地存储
+            $('.admin a').on('click', function() {
+                $('.admin').hide();
+                $('.top_left').show();
+                localStorage.removeItem('loginname');
+            });
+
             function getcookietoarray() {
                 if ($.cookie('cookiesid') && $.cookie('cookienum')) {
                     let $arrsid = $.cookie('cookiesid').split(','); //[1,3,5]
@@ -15,7 +29,7 @@ define(['jcookie'], () => {
             function rendergoods(sid, num) { //sid:商品的编号    num:商品的数量
                 //获取所有的接口数据
                 $.ajax({
-                    url: 'http://10.31.161.100/dashboard/kaola/php/listdata.php',
+                    url: 'http://10.31.161.100/dashboard/kaola/php/alldata.php',
                     dataType: 'json'
                 }).done(function(data) {
                     console.log(data);
