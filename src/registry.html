@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注册页面</title>
     <link rel="stylesheet" href="style/otherpages/listtop.css">
-    <link rel="stylesheet" href="style/otherpages/loginborder.css">
     <link rel="stylesheet" href="style/otherpages/logintop.css">
     <link rel="stylesheet" href="style/otherpages/listfooter.css">
     <link rel="stylesheet" href="style/otherpages/loginfpro.css">
+    <link rel="stylesheet" href="style/otherpages/loginborder.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/require.js/2.3.6/require.min.js" defer async=true data-main="script/main.js" id="currentpage" data-origin="registry_module"></script>
 </head>
 
 <body>
@@ -70,22 +71,29 @@
     </div>
     <div class="wrap">
         <div class="loginheart">
-            <img src="https://kaola-haitao.oss.kaolacdn.com/e2722b45-286b-45e9-a8e2-4558f4f1bee6.png" alt="">
+            <img src="https://kaola-haitao.oss.kaolacdn.com/e2722b45-286b-45e9-a8e2-4558f4f1bee6.png" alt="" class="pic1">
             <div class="loginbox">
-                <form action="http://10.31.161.100/dashboard/kaola/php/reg.php" method="post">
-                    <div class="logintop">
-                        <p>手机号注册</p>
-                        <span></span>
-                    </div>
+                <div class="logintop">
+                    <p>手机号注册</p>
+                    <span></span>
+                </div>
+                <form action="http://10.31.161.100/dashboard/kaola/php/reg.php" method="post" id="form1">
                     <div class="loginname">
-                        <input type="text" name="username" id="username" placeholder="请输入手机号">
+                        <input type="text" name="username" id="username" placeholder="请设置您的用户名">
                     </div>
+                    <span></span>
+                    <div class="tele">
+                        <input type="text" name="tel" placeholder="输入您的手机号码">
+                    </div>
+                    <span></span>
                     <div class="mima">
                         <input type="password" name="password" id="password" placeholder="请设置你的密码">
                     </div>
+                    <span></span>
                     <input type="submit" value="提交注册" name="submit" id="submit" class="s5">
                 </form>
             </div>
+            <img src="https://kaola-haitao.oss.kaolacdn.com/fe663cdc-4eb9-4b2b-b587-6a97abcd8019.png" alt="" class="pic2">
         </div>
     </div>
     <!--最后的底部-->
@@ -112,5 +120,3 @@
 </body>
 
 </html>
-<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="script/registry.js"></script>

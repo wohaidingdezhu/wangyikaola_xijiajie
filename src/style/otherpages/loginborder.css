@@ -42,7 +42,7 @@ li {
     position: relative;
 }
 
-.loginheart img {
+.pic1 {
     position: absolute;
     top: 150px;
     left: 40px;
@@ -86,7 +86,7 @@ li {
 
 .mima,
 .loginbutton {
-    margin: 15px auto;
+    margin: 15px auto 0;
     width: 270px;
     height: 36px;
     line-height: 36px;
@@ -95,7 +95,16 @@ li {
 }
 
 .loginname {
-    margin: 15px auto;
+    margin: 15px auto 0;
+    width: 270px;
+    line-height: 36px;
+    border-radius: 18px;
+    height: 36px;
+    border: 1px solid #d5d5d5;
+}
+
+.tele {
+    margin: 15px auto 0;
     width: 270px;
     line-height: 36px;
     border-radius: 18px;
@@ -126,7 +135,32 @@ li {
     color: #000;
 }
 
+.tele input {
+    width: 200px;
+    border: none;
+    outline: none;
+    height: 30px;
+    padding: 0 0 0 15px;
+    margin-left: 5px;
+    color: #000;
+}
+
 .s5 {
+    display: block;
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    height: 36px;
+    width: 270px;
+    background-color: red;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    line-height: 36px;
+    border-radius: 18px;
+}
+
+#login {
     display: block;
     height: 36px;
     width: 270px;
@@ -135,7 +169,7 @@ li {
     outline: none;
     font-size: 18px;
     line-height: 36px;
-    margin-left: 42px;
+    margin: 40px 0 0 40px;
     border-radius: 18px;
 }
 
@@ -159,3 +193,26 @@ textarea:-webkit-autofill,
 select:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #ffffff inset;
 }
+
+.pic2 {
+    border-top: 2px solid #ddd;
+    position: absolute;
+    right: 140px;
+    top: 458px;
+    display: block;
+    width: 270px;
+    height: 36px;
+}
+
+
+/* #form1 span {
+    display: block;
+    width: 270px;
+    padding-left: 30px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    color: red;
+    font-size: 12px;
+    text-align: left;
+} */

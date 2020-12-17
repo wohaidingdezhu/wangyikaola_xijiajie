@@ -134,39 +134,50 @@ define(['jcookie'], () => {
                 }
             });
 
-            //购物车：(商品sid、商品数量)
-            //1.设置存储cookie的变量。
+            //4.购物车：(商品sid、商品数量)
+            //4.1设置存储cookie的变量,因为是多个商品，采用数组存储。
             let arrsid = []; //存储商品的sid
             let arrnum = []; //存储商品的数量
-            //2.判断是第一次存储，多次存储。
-            //获取cookie才能判断，每存储一个商品对应的cookie就会发生变化。
-            //提前预判cookie设置时的key值(cookiesid/cookienum)
+
+            //4.2核心是判断用户是第一次存储，多次存储。
+            //如果是第一次存储，创建商品的列表显示在购物车列表页面。
+            //如果是多次存储，购物车列表页面里面的商品数量累加。
+
+
+            //如何判断是第一次还是第二次
+            //通过获取cookie进行判断，每存储一个商品对应的商品编号存入cookie里面，cookie就会发生变化。如果cookie里面存在当前商品的编号，该商品不是第一次存储，直接数量累加。
+
+            //提前预判cookie设置时的key值(cookiesid/cookienum)进行获取cookie
             function getcookietoarray() {
                 if ($.cookie('cookiesid') && $.cookie('cookienum')) {
                     arrsid = $.cookie('cookiesid').split(',');
                     arrnum = $.cookie('cookienum').split(',');
+                } else { //cookie不存在，清空数组。
+                    arrsid = [];
+                    arrnum = [];
                 }
             }
             //上面的函数获取cookie值，并且转换成数组，方便判断是否是第一次。
             //第一次存储添加sid进入arrsid，存储数量
             //第二次以上，直接修改数量。
+
             $('.p-btn a').on('click', function() {
                 getcookietoarray(); //获取cookie，变成数组，判断是否存在。
-                if ($.inArray($sid, arrsid) === -1) { //不存在
-                    arrsid.push($sid);
-                    $.cookie('cookiesid', arrsid, 10);
-                    arrnum.push($('#count').val());
-                    $.cookie('cookienum', arrnum, 10);
-                } else { //存着
+                if ($.inArray($sid, arrsid) === -1) { //第一次添加商品
+                    arrsid.push($sid); //添加sid
+                    $.cookie('cookiesid', arrsid, { expires: 10, path: '/' });
+                    arrnum.push($('#count').val()); //添加数量
+                    $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
+                } else { //多次添加，数量累加
                     //通过$sid获取商品的数量所在的位置。
                     let $index = $.inArray($sid, arrsid);
-                    // arrnum[$index]//原来的数组
-                    // $('#count').val()//新添加的数量
+                    //原来的数量+新加的数量进行重新赋值，添加cookie
                     arrnum[$index] = parseInt(arrnum[$index]) + parseInt($('#count').val()); //重新赋值
                     $.cookie('cookienum', arrnum, { expires: 10, path: '/' });
                 }
                 alert('按钮被点击了');
             });
+
         }
     }
 });

@@ -347,7 +347,6 @@ table {
 .wrap7 .searchflex #topsearch {
   width: 510px;
   height: 38px;
-  padding-left: 1px;
   background-color: #ff2337;
   border-radius: 40px;
 }
@@ -370,7 +369,7 @@ table {
   font-size: 13px;
   outline: none;
 }
-.wrap7 .searchflex #tosearchbtn {
+.wrap7 .searchflex #tosearchbtn3 {
   display: inline-block;
   height: 40px;
   width: 50px;
@@ -380,8 +379,8 @@ table {
   text-align: center;
   cursor: pointer;
   position: absolute;
-  top: 0;
-  right: 5px;
+  top: 5px;
+  right: 252px;
   background: url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?v=1&x-oss-process=image%2Fresize%2Cw_20%2Ch_0%2Fquality%2Cq_85) no-repeat 50%;
   background-image: -webkit-image-set(url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_20,h_0/quality,q_85&v=1) 1x, url(https://kaola-haitao.oss.kaolacdn.com/6e4da089-9347-4dc2-be19-4962832a4a5c.png?x-oss-process=image/resize,w_40,h_0/quality,q_85&v=1) 2x);
 }

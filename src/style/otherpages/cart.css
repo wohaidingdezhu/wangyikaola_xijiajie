@@ -488,7 +488,8 @@ i {
 .goods-d-info {
     height: 40px;
     line-height: 20px;
-    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .goods-ex {
@@ -680,6 +681,7 @@ i {
     margin: 7px 20px 0 10px;
     color: #666;
     width: 220px;
+    font-size: 12px;
 }
 
 .price-sum span {
@@ -770,13 +772,6 @@ i {
     background: #aaa;
     border-radius: 4px;
 }
-
-
-/*
-.s-item:hover{
-		width: 26px;
-	background: #e4393c;
-}*/
 
 .goods-list-tab .tab-selected {
     width: 26px;
